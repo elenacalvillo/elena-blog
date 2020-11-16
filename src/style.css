@@ -27,11 +27,10 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily-sans: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
+  --fontFamily-serif: "Open Sans", "Helvetica Neue", sans-serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
@@ -54,12 +53,59 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
+
+  --gray-100: #f6f9fc;
+  --gray-200: #e3ecf6;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #8898aa;
+  --gray-700: #193b68;
+  --gray-800: #193b68;
+  --gray-900: #212529;
+  --black: #193b68;
+
+  --blue: #3b8fff;
+  --indigo: #3d5afe;
+  --purple: #bb6bd9;
+  --pink: #f29292;
+  --red: #eb5757;
+  --orange: #f2994a;
+  --yellow: #ffd600;
+  --green: #54e892;
+  --teal: #69eae7;
+  --cyan: #80deea;
+
+  --dark-blue: #1479ff;
+  --dark-indigo: #0228fe;
+  --dark-purple: #bb6bd9;
+  --dark-pink: #f29292;
+  --dark-red: #eb5757;
+  --dark-orange: #f2994a;
+  --dark-yellow: #ffd600;
+  --dark-green: #54e892;
+  --dark-teal: #3be4df;
+  --dark-cyan: #3dcddf;
+
+  --shadow-blue: rgba(59, 143, 255, 0.5);
+  --shadow-indigo: #817fff;
+  --shadow-purple: #bb6bd9;
+  --shadow-pink: #f29292;
+  --shadow-red: #eb5757;
+  --shadow-orange: #f2994a;
+  --shadow-yellow: #ffd600;
+  --shadow-green: #54e892;
+  --shadow-teal: #60e8e5;
+  --shadow-cyan: rgba(62, 205, 223, 0.5);
+
   --color-primary: #005b99;
-  --color-text: #2e353f;
+  --color-text: #193b68;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+
+  --shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
 /* HTML elements */
@@ -68,6 +114,19 @@
 :after,
 :before {
   box-sizing: border-box;
+}
+
+::selection {
+  background: var(--cyan);
+  color: white;
+}
+
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 html {
@@ -80,7 +139,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
-  color: var(--color-text);
+  color: var(--gray-800);
 }
 
 footer {
@@ -102,7 +161,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  margin-top: var(--spacing-12);
+  /* margin-top: var(--spacing-12); */
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
@@ -236,6 +295,125 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
+}
+
+/* Redesigning Bootstrap */
+
+.btn {
+  background: transparent;
+  background-position: center;
+  border: none;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 2rem;
+  display: inline-block;
+  font-weight: 600;
+  min-width: 4rem;
+  height: 2.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background 0.8s;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.2)
+    radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.2) 1%) center/15000%;
+}
+
+.btn:active {
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn a {
+  color: #fff;
+}
+
+//Review this part because is adding a weird border color if I dont use but also is making the ripple effect white instead of dark...
+.btn:not(:disabled):not(.disabled):active,
+.show > .btn.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--blue) 0%, var(--dark-blue) 100%);
+  box-shadow: 0 11px 26px 0 var(--shadow-blue);
+}
+
+.btn-primary:hover {
+  background: var(--dark-blue)
+    radial-gradient(circle, transparent 1%, var(--dark-blue) 1%) center/15000%;
+}
+
+.btn-primary:active {
+  background-color: var(--blue);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn-info {
+  background: linear-gradient(180deg, var(--cyan) 0%, var(--dark-cyan) 100%);
+  box-shadow: 0 11px 26px 0 var(--shadow-cyan);
+}
+
+.btn-info:hover {
+  background: var(--dark-cyan)
+    radial-gradient(circle, transparent 1%, var(--dark-cyan) 1%) center/15000%;
+}
+
+.btn-info:active {
+  background-color: var(--cyan);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.btn-secondary {
+  color: #fff;
+  background: linear-gradient(180deg, var(--teal) 0%, var(--dark-teal) 100%);
+  box-shadow: 0 11px 26px 0 var(--shadow-cyan);
+}
+
+.btn-secondary:hover {
+  background: var(--dark-teal)
+    radial-gradient(circle, transparent 1%, var(--dark-teal) 1%) center/15000%;
+}
+
+.btn-secondary:active {
+  background-color: var(--teal);
+  background-size: 100%;
+  border-color: transparent !important;
+  transition: background 0s;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  border-radius: 0.7rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: all 0.15s ease;
+}
+
+.badge-secondary {
+  background: var(--gray-200);
+  color: var(--gray-800);
+  font-weight: 500;
 }
 
 /* Custom classes */

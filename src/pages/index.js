@@ -6,7 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Jumbotron, Button } from "react-bootstrap"
+import { Jumbotron, Button, Container, Card } from "react-bootstrap"
 
 //import CV from "cv.js"
 
@@ -32,38 +32,53 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <div className="card-deck mb-5" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
+            <Card key={post.fields.slug}>
+              <img
+                src="https://via.placeholder.com/320x150"
+                class="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <small>{post.frontmatter.date}</small>
+                <h5 className="card-title">
+                  <Link to={post.fields.slug} itemProp="url">
+                    <span itemProp="headline">{title}</span>
+                  </Link>
+                </h5>
+                <p
+                  className="card-text"
+                  dangerouslySetInnerHTML={{
+                    __html: post.frontmatter.description || post.excerpt,
+                  }}
+                  itemProp="description"
+                />
+                <div>
+                  <span class="mr-1 badge badge-secondary badge-pill">
+                    Process
+                  </span>
+                  <span class="mr-1 badge badge-secondary badge-pill">
+                    Design
+                  </span>
+                  <span class="mr-1 badge badge-secondary badge-pill">
+                    Develop
+                  </span>
+                  <span class="mr-1 badge badge-secondary badge-pill">UX</span>
+                </div>
+                <Button className="btn-primary">
+                  <Link to={post.fields.slug} itemProp="url">
+                    Learn more
+                  </Link>
+                </Button>
+              </div>
+            </Card>
           )
         })}
-      </ol>
+      </div>
     </Layout>
   )
 }
