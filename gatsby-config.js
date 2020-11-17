@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Elena Calvillo`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Elena Calvillo`,
+      summary: ``,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `I'm a passionate Front-end Developer. Resolving problems with design and code is what I love to do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `kylemathews`,
+      instagram: `prdct.tips`,
     },
   },
   plugins: [
@@ -24,6 +25,19 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `source sans pro\:400,400i,600,700`,
+          `source serif pro\:400,400i,600,700`,
+          `open sans\:400,400i,600,700`,
+          `caveat\:400,600,700`,
+        ],
+        display: "swap",
       },
     },
     {
@@ -66,7 +80,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/logo.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

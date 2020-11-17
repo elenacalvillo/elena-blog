@@ -38,11 +38,6 @@ const BlogIndex = ({ data, location }) => {
 
           return (
             <Card key={post.fields.slug}>
-              <img
-                src="https://via.placeholder.com/320x150"
-                class="card-img-top"
-                alt="..."
-              />
               <div className="card-body">
                 <small>{post.frontmatter.date}</small>
                 <h5 className="card-title">
