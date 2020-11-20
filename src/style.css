@@ -50,7 +50,7 @@
   /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
+  --fontSize-2: 1.1rem;
   --fontSize-3: 1.44rem;
   --fontSize-4: 1.728rem;
   --fontSize-5: 2.074rem;
@@ -189,15 +189,17 @@ h6 > a {
 /* Prose */
 
 p {
+  font-size: var(--fontSize-2);
   line-height: var(--lineHeight-relaxed);
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+  //margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
   padding: var(--spacing-0);
 }
 
 ul,
 ol {
+  font-size: var(--fontSize-2);
   margin-left: var(--spacing-0);
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
@@ -232,8 +234,13 @@ blockquote {
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
   border-left: var(--spacing-1) solid var(--color-secondary);
   font-family: var(--font-quote);
-  font-size: var(--fontSize-4);
   margin-bottom: var(--spacing-8);
+}
+
+blockquote p,
+blockquote > ul,
+blockquote > ol {
+  font-size: var(--fontSize-4);
 }
 
 blockquote > :last-child {
@@ -362,23 +369,25 @@ a:focus {
 }
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
   border: none;
   border-radius: 0.7rem;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
+/*
 .card:hover {
   box-shadow: var(--shadow);
   transform: translateY(-20px);
   transition: all 0.15s ease;
+}
+*/
+
+.card-columns .card {
+  //display: block;
+  margin: 0 1.3rem;
+  margin-bottom: 2rem;
+  height: auto;
 }
 
 .badge-secondary {
@@ -498,13 +507,18 @@ pre[class*="language-"] {
 
 /* Media queries */
 
-@media (max-width: 42rem) {
+@media (max-width: 64rem) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 48rem) {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
   }
-  ul,
-  ol {
-    list-style-position: inside;
+  .card-columns {
+    column-count: 1;
   }
 }

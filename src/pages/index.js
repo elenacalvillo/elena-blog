@@ -32,7 +32,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <div className="card-deck mb-5" style={{ listStyle: `none` }}>
+      <div className="card-columns mb-5">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -52,7 +52,7 @@ const BlogIndex = ({ data, location }) => {
                   }}
                   itemProp="description"
                 />
-                <div>
+                <div className="topics pt-1 pb-4">
                   <span class="mr-1 badge badge-secondary badge-pill">
                     Process
                   </span>
