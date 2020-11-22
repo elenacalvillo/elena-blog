@@ -8,7 +8,7 @@ module.exports = {
     description: `I'm a passionate Front-end Developer. Resolving problems with design and code is what I love to do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `elenahx`,
       instagram: `prdct.tips`,
     },
   },

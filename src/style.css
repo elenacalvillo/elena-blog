@@ -111,6 +111,7 @@
   --code: #f29292;
 
   --shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+  --shadow-card: 0 0.7rem 1rem rgba(0, 0, 0, 0.07);
   --strong-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
     0 5px 15px rgba(0, 0, 0, 0.07);
 }
@@ -371,7 +372,7 @@ a:focus {
 .card {
   border: none;
   border-radius: 0.7rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
   overflow: hidden;
 }
 
@@ -384,10 +385,8 @@ a:focus {
 */
 
 .card-columns .card {
-  //display: block;
-  margin: 0 1.3rem;
-  margin-bottom: 2rem;
-  height: auto;
+  margin: 1.5rem 1rem;
+  width: auto !important;
 }
 
 .badge-secondary {

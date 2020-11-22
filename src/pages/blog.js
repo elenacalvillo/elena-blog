@@ -32,7 +32,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <div className="card-columns">
+      <div className="card-columns mb-5">
         {posts.slice(0, 6).map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
