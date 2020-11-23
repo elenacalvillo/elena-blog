@@ -10,88 +10,66 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
-        <Link to="/">{title}</Link>
-      </h1>
+      <Link className="navbar-brand" to="/">
+        {title}
+      </Link>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
+      <Link className="navbar-brand" to="/">
         {title}
       </Link>
     )
   }
 
   return (
-    <div className="container" data-is-root-path={isRootPath}>
-      <Navbar>
-        <a class="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
-                Home <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Features
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <a class="dropdown-item" href="#">
-                  Action
+    <div data-is-root-path={isRootPath}>
+      <div className="container">
+        <Navbar>
+          {header}
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <Link to="/" itemProp="url">
+                  Home
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link to="/blog" itemProp="url">
+                  Blog
+                </Link>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link external"
+                  href="https://www.instagram.com/prdct.tips/"
+                  target="_blank"
+                >
+                  Product Tips
                 </a>
-                <a class="dropdown-item" href="#">
-                  Another action
-                </a>
-                <a class="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </Navbar>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+              </li>
+            </ul>
+          </div>
+        </Navbar>
+        <main>{children}</main>
+      </div>
+
+      <footer className="">
+        <small>
+          © {new Date().getFullYear()}, Developed with ☕️ and ❤️ by Elena
+          Calvillo
+        </small>
       </footer>
     </div>
   )

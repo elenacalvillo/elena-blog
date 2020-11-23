@@ -1,5 +1,6 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/bootstrap-icons.svg"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -10,7 +11,7 @@ import { Jumbotron, Button, Container, Card } from "react-bootstrap"
 
 //import CV from "cv.js"
 
-const BlogIndex = ({ data, location }) => {
+const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -54,17 +55,10 @@ const BlogIndex = ({ data, location }) => {
                 />
                 <div className="topics pt-1 pb-4">
                   <span class="mr-1 badge badge-secondary badge-pill">
-                    Process
+                    {post.frontmatter.tags}
                   </span>
-                  <span class="mr-1 badge badge-secondary badge-pill">
-                    Design
-                  </span>
-                  <span class="mr-1 badge badge-secondary badge-pill">
-                    Develop
-                  </span>
-                  <span class="mr-1 badge badge-secondary badge-pill">UX</span>
                 </div>
-                <Button className="btn-primary">
+                <Button className="btn-info">
                   <Link to={post.fields.slug} itemProp="url">
                     Learn more
                   </Link>
@@ -78,7 +72,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {
@@ -97,6 +91,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }

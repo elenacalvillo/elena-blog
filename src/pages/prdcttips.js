@@ -10,7 +10,7 @@ import { Jumbotron, Button, Container, Card } from "react-bootstrap"
 
 //import CV from "cv.js"
 
-const Blog = ({ data, location }) => {
+const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -32,8 +32,8 @@ const Blog = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <div className="card-columns mb-5">
-        {posts.map(post => {
+      <div className="card-columns">
+        {posts.slice(0, 6).map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
@@ -54,7 +54,7 @@ const Blog = ({ data, location }) => {
                 />
                 <div className="topics pt-1 pb-4">
                   <span class="mr-1 badge badge-secondary badge-pill">
-                    Process
+                    {post.frontmatter.tags}
                   </span>
                   <span class="mr-1 badge badge-secondary badge-pill">
                     Design
@@ -78,7 +78,7 @@ const Blog = ({ data, location }) => {
   )
 }
 
-export default Blog
+export default BlogIndex
 
 export const pageQuery = graphql`
   query {
@@ -97,6 +97,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }
