@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Nav, Navbar, Button, Container, Card } from "react-bootstrap"
+import "hover.css/css/hover-min.css"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -52,11 +53,28 @@ const Layout = ({ location, title, children }) => {
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link external"
+                  className="nav-link hvr-icon-wobble-horizontal"
                   href="https://www.instagram.com/prdct.tips/"
                   target="_blank"
                 >
-                  Product Tips
+                  Product Tips{" "}
+                  <svg
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    className="bi bi-box-arrow-in-up-right"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"
+                    />
+                  </svg>
                 </a>
               </li>
             </ul>
