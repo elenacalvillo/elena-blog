@@ -29,6 +29,7 @@
     "gatsby-transformer-remark": "^2.9.2",
     "gatsby-transformer-sharp": "^2.5.21",
     "hover.css": "^2.3.2",
+    "jquery": "^3.5.1",
     "prismjs": "^1.22.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.4.0",

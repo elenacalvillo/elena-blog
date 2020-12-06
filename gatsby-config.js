@@ -3,13 +3,14 @@ module.exports = {
     title: `Elena Calvillo`,
     author: {
       name: `Elena Calvillo`,
-      summary: ``,
+      summary: `I'm a Product Owner/Manager. I help agile teams to build products using my UX, Quality Assurance and Development background.`,
     },
-    description: `I'm a passionate Front-end Developer. Resolving problems with design and code is what I love to do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `I'm a Product Owner/Manager. I help agile teams to build products using my UX, Quality Assurance and Development background.`,
+    siteUrl: `https://elenacalvillo.com/`,
     social: {
       twitter: `elenahx`,
       instagram: `prdct.tips`,
+      linkedin: `elena-calvillo-863542169`,
     },
   },
   plugins: [

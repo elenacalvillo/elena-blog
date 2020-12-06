@@ -1,10 +1,3 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
@@ -14,7 +7,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50, quality: 95) {
+          fixed(width: 300, height: 300, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -26,7 +19,7 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            instagram
           }
         }
       }
@@ -40,25 +33,26 @@ const Bio = () => {
   const avatar = data?.avatar?.childImageSharp?.fixed
 
   return (
-    <div className="bio">
+    <div className="bio d-md-flex p-3">
+      <div>
+        <h1>Hi, I&#39;m Elena</h1>
+        {author?.name && (
+          <p className="summary">
+            {" "}
+            {author?.summary || null}
+            {` `}
+          </p>
+        )}
+      </div>
       {avatar && (
         <Image
           fixed={avatar}
           alt={author?.name || ``}
-          className="bio-avatar"
+          className="bio-avatar ml-3"
           imgStyle={{
             borderRadius: `50%`,
           }}
         />
-      )}
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
       )}
     </div>
   )

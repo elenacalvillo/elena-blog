@@ -1,6 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap-icons/bootstrap-icons.svg"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -8,8 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import { Jumbotron, Button, Container, Card } from "react-bootstrap"
-
-//import CV from "cv.js"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -33,6 +29,13 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <div className="container-fluid card bg-primary">
+        <img
+          src="../content/assets/ps-badge.jpg"
+          alt="Product School Founding 200"
+        />
+      </div>
+      <h2 className="text-center">Latest from the blog</h2>
       <div className="card-columns">
         {posts.slice(0, 6).map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -54,7 +57,7 @@ const Index = ({ data, location }) => {
                   itemProp="description"
                 />
                 <div className="topics pt-1 pb-4">
-                  <span class="mr-1 badge badge-secondary badge-pill">
+                  <span className="mr-1 badge badge-secondary badge-pill">
                     {post.frontmatter.tags}
                   </span>
                 </div>

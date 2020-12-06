@@ -1,5 +1,4 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -7,8 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import { Jumbotron, Button, Container, Card } from "react-bootstrap"
-
-//import CV from "cv.js"
 
 const Blog = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -31,7 +28,7 @@ const Blog = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
+      <h2 className="text-center">Latest from the blog</h2>
       <div className="card-columns mb-5">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -53,18 +50,11 @@ const Blog = ({ data, location }) => {
                   itemProp="description"
                 />
                 <div className="topics pt-1 pb-4">
-                  <span class="mr-1 badge badge-secondary badge-pill">
-                    Process
+                  <span className="mr-1 badge badge-secondary badge-pill">
+                    {post.frontmatter.tags}
                   </span>
-                  <span class="mr-1 badge badge-secondary badge-pill">
-                    Design
-                  </span>
-                  <span class="mr-1 badge badge-secondary badge-pill">
-                    Develop
-                  </span>
-                  <span class="mr-1 badge badge-secondary badge-pill">UX</span>
                 </div>
-                <Button className="btn-primary">
+                <Button className="btn-info">
                   <Link to={post.fields.slug} itemProp="url">
                     Learn more
                   </Link>
@@ -97,6 +87,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }

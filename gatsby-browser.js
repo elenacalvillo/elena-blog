@@ -5,7 +5,9 @@ import "typeface-merriweather"
 import "./src/normalize.css"
 
 import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.min.js"
 import "bootstrap-icons/bootstrap-icons.svg"
+import "hover.css/css/hover-min.css"
 
 // custom CSS styles
 import "./src/style.css"
