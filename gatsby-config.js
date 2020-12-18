@@ -15,6 +15,31 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              // usePrefix defaults to false
+              // usePrefix: true is the same as ["oembed"]
+              usePrefix: false,
+              providers: {
+                // Important to exclude providers
+                // that adds js to the page.
+                // If you do not need them.
+                Instagram: {
+                  //url: "https://api.instagram.com/oembed",
+                  access_token: "360251bb00188c3aeadf407105c6ebcc",
+                },
+                exclude: ["Reddit"],
+              },
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -39,12 +64,6 @@ module.exports = {
           `caveat\:400,600,700`,
         ],
         display: "swap",
-      },
-    },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `43454604149`,
       },
     },
     {
@@ -88,6 +107,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/logo.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `43454604149`,
       },
     },
     `gatsby-plugin-react-helmet`,

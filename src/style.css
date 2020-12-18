@@ -182,10 +182,10 @@ footer {
 }
 
 footer small {
-bottom: 3rem;
-font-size: var(--fontSize-1);
-font-weight: var(--fontWeight-semibold);
-position: absolute;
+  bottom: 3rem;
+  font-size: var(--fontSize-1);
+  font-weight: var(--fontWeight-semibold);
+  position: absolute;
 }
 
 hr {
@@ -341,12 +341,12 @@ a[target="_blank"]:after {
 }
 
 .navbar ul li:hover a {
-color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .navbar-light .navbar-toggler {
-border: 0;
-color: var(--color-text) !important;
+  border: 0;
+  color: var(--color-text) !important;
 }
 
 .btn {
@@ -462,7 +462,7 @@ color: var(--color-text) !important;
 }
 
 .card-title {
-margin-top: var(--spacing-4);
+  margin-top: var(--spacing-4);
 }
 
 .badge-secondary {
@@ -635,15 +635,15 @@ blockquote > ol {
   .summary {
     font-size: var(--fontSize-4);
   }
-  footer small{
-  bottom: 1rem;
-  left:1rem;
-  padding: 1rem;
+  footer small {
+    bottom: 1rem;
+    left: 1rem;
+    padding: 1rem;
   }
   .navbar ul li {
-  font-size: var(--fontSize-3);
-  margin: var(--spacing-3);
-  padding-left: var(--spacing-3);
+    font-size: var(--fontSize-3);
+    margin: var(--spacing-3);
+    padding-left: var(--spacing-3);
   }
 }
 

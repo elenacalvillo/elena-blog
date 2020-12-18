@@ -48,7 +48,7 @@ const Bio = () => {
         <Image
           fixed={avatar}
           alt={author?.name || ``}
-          className="bio-avatar ml-3"
+          className="bio-avatar align-self-sm-center img-fluid flex-sm-shrink-2 ml-md-3"
           imgStyle={{
             borderRadius: `50%`,
           }}

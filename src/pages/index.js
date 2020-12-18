@@ -5,6 +5,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import ProductSchool from "../../static/ps-badge.jpg"
+
 import { Jumbotron, Button, Container, Card } from "react-bootstrap"
 
 const Index = ({ data, location }) => {
@@ -29,11 +31,30 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <div className="container-fluid card bg-primary">
-        <img
-          src="../content/assets/ps-badge.jpg"
-          alt="Product School Founding 200"
-        />
+      <div className="card m-3 mb-5 p-3">
+        <div className="row">
+          <div className="col-md-3 text-center">
+            <img
+              className="img-fluid ml-md-4 p-4"
+              src={ProductSchool}
+              alt="Product School Founding 200"
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">Product School member</h5>
+              <p className="card-text">
+                I'm proud to be part of the Product School community!
+              </p>
+              <p className="card-text">
+                Product School Pro is the most exclusive community for Product
+                Leaders. All of our members are real-world Product Leaders
+                working at top companies including Google, Facebook, Netflix,
+                Airbnb, PayPal, Uber, and Amazon.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <h2 className="text-center">Latest from the blog</h2>
       <div className="card-columns">
