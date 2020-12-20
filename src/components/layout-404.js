@@ -109,13 +109,6 @@ const Layout = ({ location, title, children }) => {
       <div className="container header-space">
         <main>{children}</main>
       </div>
-
-      <footer>
-        <small>
-          © {new Date().getFullYear()}, developed with ☕️ and ❤️ by Elena
-          Calvillo
-        </small>
-      </footer>
     </div>
   )
 }

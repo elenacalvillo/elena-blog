@@ -1,15 +1,16 @@
 import React from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Button, Container, Card } from "react-bootstrap"
+import { Jumbotron, Button, Container, Card } from "react-bootstrap"
 
-import ProductSchool from "../../static/ps-badge.jpg"
+//import CV from "cv.js"
 
-const Index = ({ data, location }) => {
+const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -31,32 +32,6 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <div className="card m-3 mb-5 p-3">
-        <div className="row">
-          <div className="col-md-3 text-center">
-            <img
-              className="img-fluid ml-md-4 p-4"
-              src={ProductSchool}
-              alt="Product School Founding 200"
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Product School member</h5>
-              <p className="card-text">
-                I'm proud to be part of the Product School community!
-              </p>
-              <p className="card-text">
-                Product School Pro is the most exclusive community for Product
-                Leaders. All of our members are real-world Product Leaders
-                working at top companies including Google, Facebook, Netflix,
-                Airbnb, PayPal, Uber, and Amazon.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h2 className="text-center">Latest from the blog</h2>
       <div className="card-columns">
         {posts.slice(0, 6).map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -78,11 +53,18 @@ const Index = ({ data, location }) => {
                   itemProp="description"
                 />
                 <div className="topics pt-1 pb-4">
-                  <span className="mr-1 badge badge-secondary badge-pill">
+                  <span class="mr-1 badge badge-secondary badge-pill">
                     {post.frontmatter.tags}
                   </span>
+                  <span class="mr-1 badge badge-secondary badge-pill">
+                    Design
+                  </span>
+                  <span class="mr-1 badge badge-secondary badge-pill">
+                    Develop
+                  </span>
+                  <span class="mr-1 badge badge-secondary badge-pill">UX</span>
                 </div>
-                <Button className="btn-info">
+                <Button className="btn-primary">
                   <Link to={post.fields.slug} itemProp="url">
                     Learn more
                   </Link>
@@ -96,7 +78,7 @@ const Index = ({ data, location }) => {
   )
 }
 
-export default Index
+export default BlogIndex
 
 export const pageQuery = graphql`
   query {
