@@ -14,6 +14,18 @@ module.exports = {
     },
   },
   plugins: [
+    /* This is causing an error, haven't resolved it :(
+    {
+      resolve: "gatsby-plugin-mixpanel",
+      options: {
+        apiToken: "ffc50d7f8bebb41b84e4133c1af91276",
+        enableOnDevMode: true,
+        mixpanelConfig: null,
+        pageViews: "all",
+        getPageViewTransformerFn: null,
+      },
+    },
+    */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -57,7 +69,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `limelight`,
           `source sans pro\:400,400i,600,700`,
           `source serif pro\:400,400i,600,700`,
           `open sans\:400,400i,600,700`,
@@ -93,7 +104,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `G-WW42GL7N09`,
       },
     },
     `gatsby-plugin-feed`,

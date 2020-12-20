@@ -5,9 +5,9 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import ProductSchool from "../../static/ps-badge.jpg"
+import { Button, Container, Card } from "react-bootstrap"
 
-import { Jumbotron, Button, Container, Card } from "react-bootstrap"
+import ProductSchool from "../../static/ps-badge.jpg"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
