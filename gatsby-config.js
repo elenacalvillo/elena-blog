@@ -34,8 +34,11 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          process.env.GOOGLE_MEASUREMENT_ID, // Google Analytics / GA
+          "G-2Q23H9D3GZ", // Google Analytics / GA
         ],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     {
@@ -125,7 +128,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `43454604149`,
+        username: "43454604149",
       },
     },
     `gatsby-plugin-react-helmet`,
