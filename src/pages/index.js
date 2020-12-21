@@ -16,7 +16,7 @@ const Index = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Elena Calvillo Product Owner / Product Manager" />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -29,7 +29,7 @@ const Index = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Elena Calvillo Product Owner / Product Manager" />
       <Bio />
       <div className="card m-3 mb-5 p-3">
         <div className="row">
