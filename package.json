@@ -27,6 +27,7 @@
     "gatsby-remark-copy-linked-files": "^2.7.0",
     "gatsby-remark-images": "^3.8.0",
     "gatsby-remark-prismjs": "^3.10.0",
+    "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-remark-responsive-iframe": "^2.8.0",
     "gatsby-remark-smartypants": "^2.7.0",
     "gatsby-source-filesystem": "^2.8.0",
@@ -41,7 +42,8 @@
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
-    "reactstrap": "^8.7.1"
+    "reactstrap": "^8.7.1",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "prettier": "2.1.2"
