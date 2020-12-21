@@ -23,9 +23,7 @@ With this being said, my dad did the electronic installations not just thinking 
 
 He cared so much about the user needs and to bring the best quality to the service that at the end he delivered a product that was:
 
-<div align="center">
-![UX design should be](ux.png)
-</div>
+![UX design should be](ux.jpg)
 
 Clients were mind blown because they haven't experienced something like this before, guess what happened next? They were spreading the world in all the city, my dad didn't even had to hire a marketer or invest in publicity. Clients were doing that for him because they were very satisfied with his work!
 

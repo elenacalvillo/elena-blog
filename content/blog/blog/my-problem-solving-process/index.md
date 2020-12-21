@@ -7,17 +7,13 @@ tags: Processes
 
 My boyfriend and I planned a trip to Mazamitla, it's a small town in Jalisco, Mexico. We needed a quiet and calm place to depurate us from the loud noise of the city. We suddenly fell in love with that place when we arrived. It is a small town but with a lot of magic and enchantment.
 
-<div align="center">
-![Mazamitla, Jalisco](mazamitla.png)
-</div>
+![Mazamitla, Jalisco](mazamitla.jpg)
 
 One of the first things we did, was going to a gift shop because I wanted to have something traditional from that place. Inside the shop, I've found a very unusual toy. At least, I haven't seen it before.
 
 It was small cube made of wood, it looked like a Rubik's cube yet it's called serpent cube. Because when you unfold it, looks like a serpent. Every little cube is tied together by a string.
 
-<div align="center">
-![Serpent Cube](serpent-cube.png)
-</div>
+![Serpent Cube](serpent-cube.jpg)
 
 When we arrived at the cabin, the first thing I did was to play with it. It looked so easy to resolve when everything was in its place... The reality is that it was harder than I expected.
 
