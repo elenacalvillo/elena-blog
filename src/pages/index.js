@@ -56,7 +56,7 @@ const Index = ({ data, location }) => {
           </div>
         </div>
       </div>
-      <h2 className="text-center">Latest from the blog</h2>
+      <h2 className="text-center pt-5">Latest from the blog</h2>
       <div className="card-columns">
         {posts.slice(0, 6).map(post => {
           const title = post.frontmatter.title || post.fields.slug
