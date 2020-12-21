@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "-": "0.0.1",
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.2.1",
@@ -17,6 +18,7 @@
     "gatsby-plugin-feed": "^2.10.0",
     "gatsby-plugin-google-analytics": "^2.8.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-google-gtag": "^2.5.0",
     "gatsby-plugin-manifest": "^2.9.0",
     "gatsby-plugin-mdx": "^1.7.0",
     "gatsby-plugin-mixpanel": "^3.2.0",
@@ -37,6 +39,7 @@
     "hover.css": "^2.3.2",
     "jquery": "^3.5.1",
     "mixpanel-browser": "^2.40.0",
+    "npm": "^6.14.10",
     "prismjs": "^1.22.0",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",

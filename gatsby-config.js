@@ -1,3 +1,7 @@
+require(`dotenv`).config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Elena Calvillo`,
@@ -27,11 +31,11 @@ module.exports = {
     },
     */
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `G-2Q23H9D3GZ`,
-        head: true,
-        anonymize: true,
+        trackingIds: [
+          process.env.GOOGLE_MEASUREMENT_ID, // Google Analytics / GA
+        ],
       },
     },
     {
