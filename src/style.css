@@ -138,6 +138,8 @@ img {
 }
 
 html {
+  overflow: hidden;
+  overflow-y: scroll;
   line-height: var(--lineHeight-normal);
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
@@ -159,8 +161,7 @@ body {
   background: var(--gray-100);
   color: var(--color-text);
   height: auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   position: relative;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
