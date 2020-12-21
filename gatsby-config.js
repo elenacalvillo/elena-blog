@@ -27,6 +27,14 @@ module.exports = {
     },
     */
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `G-2Q23H9D3GZ`,
+        head: true,
+        anonymize: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
@@ -95,12 +103,6 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `256873166`,
       },
     },
     `gatsby-plugin-feed`,
