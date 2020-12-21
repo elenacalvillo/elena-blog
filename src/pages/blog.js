@@ -14,7 +14,7 @@ const Blog = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Elena Calvillo Product Owner / Product Manager blog posts" />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -27,7 +27,7 @@ const Blog = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Elena Calvillo Product Owner / Product Manager blog posts" />
       <h2 className="text-center">Latest from the blog</h2>
       <div className="card-columns mb-5">
         {posts.map(post => {

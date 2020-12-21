@@ -17,7 +17,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Elena Calvillo Product Owner / Product Manager Instagram" />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Elena Calvillo Product Owner / Product Manager Instagram" />
       <Bio />
       <div className="card-columns">
         {posts.slice(0, 6).map(post => {
