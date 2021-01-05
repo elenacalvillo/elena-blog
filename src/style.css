@@ -271,6 +271,10 @@ table thead tr th {
   border-bottom: 1px solid var(--color-accent);
 }
 
+table tr th, table tr td {
+	padding: .5rem;
+}
+
 /* Link */
 
 a {
