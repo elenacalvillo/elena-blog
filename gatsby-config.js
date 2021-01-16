@@ -98,6 +98,13 @@ module.exports = {
             },
           },
           {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow",
+            },
+          },
+          {
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
               // usePrefix defaults to false
