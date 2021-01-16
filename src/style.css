@@ -244,7 +244,7 @@ ol {
 
 ul li,
 ol li {
-  padding-left: var(--spacing-8);
+  padding-left: var(--spacing-1);
 }
 
 li > p {
@@ -257,7 +257,7 @@ li *:last-child {
 
 li > ul {
   margin-left: var(--spacing-8);
-  margin-top: calc(var(--spacing-8) / 2);
+  margin-top: calc(var(--spacing-4) / 2);
 }
 
 table {
@@ -271,18 +271,20 @@ table thead tr th {
   border-bottom: 1px solid var(--color-accent);
 }
 
-table tr th, table tr td {
-	padding: .5rem;
+table tr th,
+table tr td {
+  padding: 0.5rem;
 }
 
 /* Link */
 
 a {
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 a:hover,
 a:focus {
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -446,28 +448,37 @@ a[target="_blank"]:after {
   transition: background 0s;
 }
 
+/*  Cards  */
+
 .card {
   border: none;
   border-radius: 0.7rem;
   box-shadow: var(--shadow-card);
   overflow: hidden;
-}
-
-/*
-.card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-20px);
   transition: all 0.15s ease;
 }
-*/
 
-.card-columns .card {
-  margin: 1.5rem 1rem;
-  width: auto !important;
+a .card:hover {
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transform: translateY(-20px);
+  transition: all 0.25s ease;
+}
+
+a .card:hover h5 {
+  color: var(--color-primary);
+  font-weight: bold;
 }
 
 .card-title {
   margin-top: var(--spacing-4);
+}
+
+.card-footer {
+  border: 0;
+  background: none;
+  padding-top: 0;
+  padding-bottom: 1.5rem;
 }
 
 .badge-secondary {
@@ -598,8 +609,36 @@ pre[class*="language-"] {
   margin-bottom: var(--spacing-8) !important;
 }
 
+.blog-post li {
+  margin-bottom: var(--spacing-4);
+}
+
+.blog-post li::marker {
+  color: var(--pink);
+}
+
+.blog-post li p {
+  margin: 0 !important;
+}
+
+.blog-post section a {
+  color: var(--color-text);
+  border-bottom: 3px solid var(--cyan);
+  transition: all 0.15s ease;
+}
+
+.blog-post section a:hover {
+  border-bottom: 3px solid var(--dark-teal);
+}
+
 .blog-post-nav ul {
   margin: var(--spacing-0);
+}
+
+.prev-post:hover,
+.next-post:hover {
+  color: var(--cyan);
+  transition: all 0.15s ease;
 }
 
 blockquote {
@@ -651,9 +690,6 @@ blockquote > ol {
 /* Media queries */
 
 @media (max-width: 64rem) {
-  .card-columns {
-    column-count: 2;
-  }
   .summary {
     font-size: var(--fontSize-4);
   }
@@ -673,8 +709,5 @@ blockquote > ol {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
-  }
-  .card-columns {
-    column-count: 1;
   }
 }
