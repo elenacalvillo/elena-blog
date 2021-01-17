@@ -56,39 +56,43 @@ const Index = ({ data, location }) => {
           </div>
         </div>
       </div>
-      <h2 className="text-center pt-5">Latest from the blog</h2>
-      <div className="card-columns">
+      <h2 className="text-center pt-5 mb-5">Latest from the blog</h2>
+      <div className="row row-cols-1 row-cols-lg-3 g-4">
         {posts.slice(0, 6).map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <Card key={post.fields.slug}>
-              <div className="card-body">
-                <small>{post.frontmatter.date}</small>
-                <h5 className="card-title">
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{title}</span>
-                  </Link>
-                </h5>
-                <p
-                  className="card-text"
-                  dangerouslySetInnerHTML={{
-                    __html: post.frontmatter.description || post.excerpt,
-                  }}
-                  itemProp="description"
-                />
-                <div className="topics pt-1 pb-4">
-                  <span className="mr-1 badge badge-secondary badge-pill">
-                    {post.frontmatter.tags}
-                  </span>
-                </div>
-                <Button className="btn-info">
-                  <Link to={post.fields.slug} itemProp="url">
-                    Learn more
-                  </Link>
-                </Button>
-              </div>
-            </Card>
+            <div className="col mb-5">
+              <Link to={post.fields.slug} itemProp="url">
+                <Card key={post.fields.slug} className="h-100" temProp="url">
+                  <div className="card-body">
+                    <small>{post.frontmatter.date}</small>
+                    <h5 className="card-title" itemProp="headline">
+                      {title}
+                    </h5>
+                    <p
+                      className="card-text"
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </div>
+                  <div className="card-footer">
+                    <div className="topics pt-1 pb-4">
+                      <span className="mr-1 badge badge-secondary badge-pill">
+                        {post.frontmatter.tags}
+                      </span>
+                    </div>
+                    <Button className="btn-info">
+                      <Link to={post.fields.slug} itemProp="url">
+                        Learn more
+                      </Link>
+                    </Button>
+                  </div>
+                </Card>
+              </Link>
+            </div>
           )
         })}
       </div>
