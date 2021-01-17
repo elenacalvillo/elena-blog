@@ -14,15 +14,11 @@ module.exports = {
     },
   },
   plugins: [
-    /* This is causing an error, haven't resolved it :(
+    /*
     {
       resolve: "gatsby-plugin-mixpanel",
       options: {
-        apiToken: "ffc50d7f8bebb41b84e4133c1af91276",
-        enableOnDevMode: true,
-        mixpanelConfig: null,
-        pageViews: "all",
-        getPageViewTransformerFn: null,
+        apiToken: "ffc50d7f8bebb41b84e4133c1af91276", // required
       },
     },
     */
