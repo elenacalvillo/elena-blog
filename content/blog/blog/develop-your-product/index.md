@@ -1,9 +1,9 @@
-# Develop your product
-
-date: Jan 16, 2021
+---
+date: "2021-01-17T00:00:00.00Z"
 description: Analyze which technologies can help your product to achieve the goal. Evaluate the necessary tools before it's too late.
 tags: Product Management
 title: Develop your product
+---
 
 I have to admit this is my favorite part of the whole process. When you’re finally creating your Frankenstein and see how it’s getting shaped.
 
