@@ -1,7 +1,7 @@
 ---
 date: "2021-01-27T00:00:00.00Z"
 description: Take vantage of analytics and basic data analysis to improve your product's experience.
-tags: Product Management
+tags: Analytics
 title: Use analytics to improve your product's user experience
 ---
 

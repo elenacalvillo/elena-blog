@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Nav, Navbar, Button, Container, Card } from "react-bootstrap"
+import { withPrefix } from "gatsby"
+import Helmet from "react-helmet"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -21,7 +23,7 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
-  return (
+  return (    
     <div data-is-root-path={isRootPath}>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-light">
         <div className="container">
