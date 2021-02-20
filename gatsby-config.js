@@ -34,6 +34,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-heap",
+      options: {
+        appId: "2824551765",
+        enableOnDevMode: true, // if 'false', heap will be fired on NODE_ENV=production only
+      },
+    },
+    {
       resolve: `gatsby-plugin-hotjar`,
       options: {
         includeInDevelopment: true, // optional parameter to include script in development
@@ -45,6 +52,24 @@ module.exports = {
       resolve: "gatsby-plugin-load-script",
       options: {
         src: "/termly-cookie-banner.js",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "/uxsniff.js",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "/indicative.js",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "/plerdy.js",
       },
     },
     {
