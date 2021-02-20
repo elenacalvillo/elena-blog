@@ -55,24 +55,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-        src: "/uxsniff.js",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-        src: "/indicative.js",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-        src: "/plerdy.js",
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
