@@ -31,32 +31,6 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Elena Calvillo Product Owner / Product Manager" />
       <Bio />
-      <h1>A/B TEST</h1>
-      <div className="card m-3 mb-5 p-3">
-        <div className="row">
-          <div className="col-md-3 text-center">
-            <img
-              className="img-fluid ml-md-4 p-4"
-              src={ProductSchool}
-              alt="Product School Founding 200"
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Product School member</h5>
-              <p className="card-text">
-                I'm proud to be part of the Product School community!
-              </p>
-              <p className="card-text">
-                Product School Pro is the most exclusive community for Product
-                Leaders. All of our members are real-world Product Leaders
-                working at top companies including Google, Facebook, Netflix,
-                Airbnb, PayPal, Uber, and Amazon.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
       <h2 className="text-center pt-5 mb-5">Latest from the blog</h2>
       <div className="row row-cols-1 row-cols-lg-3 g-4">
         {posts.slice(0, 6).map(post => {
@@ -96,6 +70,32 @@ const Index = ({ data, location }) => {
             </div>
           )
         })}
+      </div>
+      
+      <div className="card m-3 mb-5 p-3">
+        <div className="row">
+          <div className="col-md-3 text-center">
+            <img
+              className="img-fluid ml-md-4 p-4"
+              src={ProductSchool}
+              alt="Product School Founding 200"
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">Product School member</h5>
+              <p className="card-text">
+                I'm proud to be part of the Product School community!
+              </p>
+              <p className="card-text">
+                Product School Pro is the most exclusive community for Product
+                Leaders. All of our members are real-world Product Leaders
+                working at top companies including Google, Facebook, Netflix,
+                Airbnb, PayPal, Uber, and Amazon.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   )
