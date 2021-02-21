@@ -14,14 +14,12 @@ module.exports = {
     },
   },
   plugins: [
-    /*
     {
       resolve: "gatsby-plugin-mixpanel",
       options: {
         apiToken: "ffc50d7f8bebb41b84e4133c1af91276", // required
       },
     },
-    */
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
