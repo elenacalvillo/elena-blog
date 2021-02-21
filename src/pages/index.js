@@ -31,6 +31,7 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Elena Calvillo Product Owner / Product Manager" />
       <Bio />
+      <h1>A/B TEST</h1>
       <div className="card m-3 mb-5 p-3">
         <div className="row">
           <div className="col-md-3 text-center">
