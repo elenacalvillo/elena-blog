@@ -10,7 +10,7 @@ import { Button, Container, Card } from 'react-bootstrap';
 
 //import CV from "cv.js"
 
-const BlogIndex = ({ data, location }) => {
+const ProductTipsIndex = ({ data, location }) => {
 	const siteTitle = data.site.siteMetadata?.title || `Title`;
 	const posts = data.allMarkdownRemark.nodes;
 
@@ -68,7 +68,7 @@ const BlogIndex = ({ data, location }) => {
 	);
 };
 
-export default BlogIndex;
+export default ProductTipsIndex;
 
 export const pageQuery = graphql`
   query {
