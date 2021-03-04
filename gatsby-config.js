@@ -80,6 +80,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
