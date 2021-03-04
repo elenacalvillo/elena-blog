@@ -53,6 +53,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "/smartlook.js",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
