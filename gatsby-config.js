@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-heap",
       options: {
-        appId: "2824551765",
+        appId: "4130300054",
         enableOnDevMode: true, // if 'false', heap will be fired on NODE_ENV=production only
       },
     },
