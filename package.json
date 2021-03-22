@@ -28,6 +28,7 @@
     "gatsby-plugin-mixpanel": "^3.4.0",
     "gatsby-plugin-offline": "^3.10.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-segment-analytics": "^0.3.1",
     "gatsby-plugin-sharp": "^2.14.3",
     "gatsby-plugin-social9-socialshare": "^1.0.4",
     "gatsby-remark-copy-images": "^0.2.1",
@@ -51,6 +52,7 @@
     "react-bootstrap": "^1.5.1",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
+    "react-multi-carousel": "^2.6.2",
     "reactstrap": "^8.9.0",
     "yarn": "^1.22.10"
   },

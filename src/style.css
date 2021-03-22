@@ -330,6 +330,10 @@ a[target="_blank"]:after {
   background: white !important;
 }
 
+.bg-dark {
+  background: var(--dark-blue) !important;
+}
+
 .navbar-brand {
   color: var(--color-secondary) !important;
   font-weight: bold;
@@ -621,7 +625,8 @@ pre[class*="language-"] {
   margin: 0 !important;
 }
 
-.blog-post section a {
+.blog-post section a,
+.pretty-link {
   color: var(--color-text);
   border-bottom: 3px solid var(--cyan);
   transition: all 0.15s ease;

@@ -15,9 +15,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-mixpanel",
+      resolve: "gatsby-plugin-segment-analytics",
       options: {
-        apiToken: "ffc50d7f8bebb41b84e4133c1af91276", // required
+        writeKey: "3B4o9vsmK7v9kXyZoGYSz2BE1GKFDO1j",
       },
     },
     {
@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-heap",
       options: {
-        appId: "2824551765",
+        appId: "4130300054", //production ID
         enableOnDevMode: true, // if 'false', heap will be fired on NODE_ENV=production only
       },
     },
