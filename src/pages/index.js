@@ -89,7 +89,6 @@ const Index = ({ data, location }) => {
                         >
                           <Link to={`/tags/${kebabCase(tag)}/`}>
                             {tag}
-                            {i < post.frontmatter.tags.length - 1 ? "" : ""}
                           </Link>
                         </span>
                       ])}
