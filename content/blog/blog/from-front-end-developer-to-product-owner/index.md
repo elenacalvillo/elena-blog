@@ -2,7 +2,7 @@
 date: "2020-11-26T00:00:00.00Z"
 title: From Front-end Developer to Product Owner
 description: How I switched from being a Front-end developer to a Product Owner
-tags: Career
+tags: ["Career Path", "Product Owner", "Developer"]
 ---
 
 I remember the time when I first fell in love with coding by myself like if it was yesterday. I always got good scores at school on programming subjects, but it was on the university (yeah at the wrong career) when I was in a Sanborn's store sightseeing at the books section and then I found a special section for "technology". And there was a book that caught my attention...

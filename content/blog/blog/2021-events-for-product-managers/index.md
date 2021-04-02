@@ -2,7 +2,7 @@
 date: "2021-02-18"
 title: 2021 Events for Product Managers
 description: 2021 Conferences for product managers and product designers you cannot miss!
-tags: ["Product Management", "Conferences", "Events"]
+tags: ["Product Management", "Conference & Events"]
 ---
 
 There’s so much benefit of attending product events. It goes from start building your network, get advice from experts and find new job positions, get discounts on tools or services, and learn from other people experience!

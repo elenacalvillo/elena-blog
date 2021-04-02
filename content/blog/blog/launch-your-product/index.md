@@ -1,7 +1,7 @@
 ---
 date: "2021-01-24T00:00:00.00Z"
 description: A good product launch always comes with testing everything first to avoid so many bugs at the beginning.
-tags: Product Management
+tags: ["Product Management", "Development Process","Launch"]
 title: Launch your product
 ---
 

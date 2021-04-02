@@ -1,7 +1,7 @@
 ---
 date: "2021-01-17T00:00:00.00Z"
 description: Analyze which technologies can help your product to achieve the goal. Evaluate the necessary tools before it's too late.
-tags: Product Management
+tags: ["Product Management", "Development Process","Development"]
 title: Develop your product
 ---
 
@@ -11,7 +11,7 @@ First, let's remember the product you came up with the first stages. Is your pro
 
 You should not develop until you have these answers, these are your product’s foundations. There are some products that survive a big change when it requires a whole new strategy, but that's not the fairy tale story for the rest.
 
- I know I repeat this too often but it's for your own good. It's not easy to rebuild a whole app in another programming language, it costs money and can harm your product lifecycle.
+I know I repeat this too often but it's for your own good. It's not easy to rebuild a whole app in another programming language, it costs money and can harm your product lifecycle.
 
 A proper research will lead us to the conclusion that in most of the cases these are some of the aspects to consider in this phase:
 
@@ -31,7 +31,7 @@ From my research, using **[React](https://reactjs.org)** is the right choice:
 - Is **SEO friendly.** Google loves React as is easy to crawl, thumbs up!
 - It has a big community, is **easy to find help.**
 - Big companies use it like Amazon, Uber, Airbnb, Netflix, etc. So it’ll be **supported for long time.**
-- **Extra:** valuable skill for developers $$$$
+- **Extra:** valuable skill for developers \$\$\$\$
 
 ### Hosting, domain and analytics decisions
 
@@ -44,7 +44,7 @@ From my research, using **[React](https://reactjs.org)** is the right choice:
 
 My website is static, I’m not using a CMS like Wordpress. Yet I’m not creating manually each one of the posts, that would be insane!
 
-Just imagine it, I would had to create a new subpage every time I have a new blog entry and manually add  all the paragraphs inside <p> tags and re create that for each post. Not to mention that I will have to also edit the homepage and the blog page to show my latest card.
+Just imagine it, I would had to create a new subpage every time I have a new blog entry and manually add all the paragraphs inside <p> tags and re create that for each post. Not to mention that I will have to also edit the homepage and the blog page to show my latest card.
 
 It just not worth it.
 
