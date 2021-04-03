@@ -675,8 +675,12 @@ blockquote > ol {
   margin-bottom: var(--spacing-8);
 }
 
-.tags-found {
+.tags-all, .tags-found {
   margin-left: -200px;
+}
+
+.tags-all::before {
+  content: url(../content/assets/tags.svg);
 }
 
 .tags-found::before {
@@ -715,6 +719,9 @@ blockquote > ol {
     font-size: var(--fontSize-3);
     margin: var(--spacing-3);
     padding-left: var(--spacing-3);
+  }
+  .tags-all {
+    margin-left: 0;
   }
 }
 

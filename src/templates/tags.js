@@ -6,7 +6,7 @@ import { Link, graphql } from "gatsby"
 import { Button, Card } from "react-bootstrap"
 
 const Tags = ({ pageContext, data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata.title
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -22,12 +22,12 @@ const Tags = ({ pageContext, data, location }) => {
     <div className="row">
     <div className="col-lg-6 blog-post pb-3">
       <h3>Found {tagHeader}:</h3>
-      <ul className="pt-4 pb-4">
+      <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li className="m-3" key={slug}>
+            <li key={slug}>
               <Link className="pretty-link" to={slug}>{title}</Link>
             </li>
           )
@@ -37,7 +37,7 @@ const Tags = ({ pageContext, data, location }) => {
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
-      <Button className="btn-info ml-3">
+      <Button className="btn-info mt-3">
         <Link to="/tags" itemProp="url">See all tags</Link>
       </Button>
     </div>
