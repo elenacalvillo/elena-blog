@@ -675,6 +675,14 @@ blockquote > ol {
   margin-bottom: var(--spacing-8);
 }
 
+.tags-found {
+  margin-left: -200px;
+}
+
+.tags-found::before {
+  content: url(../content/assets/found.svg);
+}
+
 .not-found {
   height: 100%;
 }

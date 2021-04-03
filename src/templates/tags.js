@@ -1,10 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-// Components
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
+import { Button, Card } from "react-bootstrap"
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -12,15 +14,21 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
+    <Layout location={location} title={siteTitle}>
+    <SEO
+      title="All tags"
+      description="All tags"
+    />
+    <div className="row">
+    <div className="col-lg-6 blog-post pb-3">
+      <h3>Found {tagHeader}:</h3>
+      <ul className="pt-4 pb-4">
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
+            <li className="m-3" key={slug}>
+              <Link className="pretty-link" to={slug}>{title}</Link>
             </li>
           )
         })}
@@ -29,8 +37,14 @@ const Tags = ({ pageContext, data }) => {
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
-      <Link to="/tags">All tags</Link>
+      <Button className="btn-info ml-3">
+        <Link to="/tags" itemProp="url">See all tags</Link>
+      </Button>
     </div>
+    <div className="col-lg-6 tags-found img-fluid">
+    </div>
+    </div>
+    </Layout>
   )
 }
 
@@ -61,6 +75,11 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

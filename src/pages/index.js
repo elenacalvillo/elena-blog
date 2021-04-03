@@ -81,7 +81,7 @@ const Index = ({ data, location }) => {
                     />
                   </div>
                   <div className="card-footer">
-                    <div className="topics pt-1 pb-4">
+                    <div className="topics pb-4">
                       {post.frontmatter.tags.map((tag, i) => [
                         <span
                           className="mr-1 badge badge-secondary badge-pill"

@@ -2,7 +2,7 @@
 date: "2021-02-27"
 title: Easy steps to run effective meetings
 description: How to turn that boring meeting into actionable tasks for everyone.
-tags: ["Productivity"]
+tags: ["Productivity","Meetings"]
 ---
 
 Have you’ve been in a meeting that could have been an email instead? Looking at your clock for the time to end and at the end, there were no clear actions to take and nobody understood what was the real point of having it!
