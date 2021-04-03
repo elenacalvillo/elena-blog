@@ -1,7 +1,7 @@
 ---
 date: "2021-01-11T00:00:00.00Z"
 description: With a good definition of our problem and a deep research and understanding of our user we can design the strategy of our product!
-tags: Product Management
+tags: ["Product Management", "Development Process","Design"]
 title: Design your product
 ---
 

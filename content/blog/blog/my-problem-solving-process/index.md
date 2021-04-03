@@ -2,7 +2,7 @@
 date: "2020-12-01T00:00:00.00Z"
 title: My problem-solving process
 description: How I switched from being a Front-end developer to a Product Owner
-tags: Processes
+tags: ["Design Thinking", "Personal Story"]
 ---
 
 My boyfriend and I planned a trip to Mazamitla, it's a small town in Jalisco, Mexico. We needed a quiet and calm place to depurate us from the loud noise of the city. We suddenly fell in love with that place when we arrived. It is a small town but with a lot of magic and enchantment.

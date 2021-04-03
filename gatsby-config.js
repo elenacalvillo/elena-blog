@@ -15,9 +15,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-mixpanel",
+      resolve: "gatsby-plugin-segment-analytics",
       options: {
-        apiToken: "ffc50d7f8bebb41b84e4133c1af91276", // required
+        writeKey: "3B4o9vsmK7v9kXyZoGYSz2BE1GKFDO1j",
       },
     },
     {

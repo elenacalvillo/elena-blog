@@ -1,11 +1,12 @@
 import React from "react"
+import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Button, Container, Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 
 import ProductSchool from "../../static/ps-badge.jpg"
 
@@ -31,6 +32,7 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Elena Calvillo Product Owner / Product Manager" />
       <Bio />
+
       <div className="card m-3 mb-5 p-3">
         <div className="row">
           <div className="col-md-3 text-center">
@@ -79,13 +81,21 @@ const Index = ({ data, location }) => {
                     />
                   </div>
                   <div className="card-footer">
-                    <div className="topics pt-1 pb-4">
-                      <span className="mr-1 badge badge-secondary badge-pill">
-                        {post.frontmatter.tags}
-                      </span>
+                    <div className="topics pb-4">
+                      {post.frontmatter.tags.map((tag, i) => [
+                        <span
+                          className="mr-1 badge badge-secondary badge-pill"
+                          key={i}
+                        >
+                          <Link to={`/tags/${kebabCase(tag)}/`}>
+                            {tag}
+                          </Link>
+                        </span>
+                      ])}
                     </div>
+
                     <Button className="btn-info">
-                      <Link to={post.fields.slug} itemProp="url">
+                      <Link to={post.frontmatter.slug} itemProp="url">
                         Learn more
                       </Link>
                     </Button>
@@ -121,6 +131,9 @@ export const pageQuery = graphql`
           description
           tags
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
       }
     }
   }

@@ -2,7 +2,7 @@
 date: "2020-12-11T00:00:00.00Z"
 title: Everyone can do UX
 description: How I learned about UX since 5 years old
-tags: UX
+tags: ["UX","Personal Story"]
 ---
 
 My father taught me about UX before it became very popular like nowadays. He is an Electronic Engineer and he worked so hard since young to have his own workshop. So you can imagine a 5 year old version of me playing around.

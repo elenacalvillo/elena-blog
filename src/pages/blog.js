@@ -1,11 +1,12 @@
 import React from "react"
+import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Button, Container, Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 
 const Blog = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -51,11 +52,18 @@ const Blog = ({ data, location }) => {
                     />
                   </div>
                   <div className="card-footer">
-                    <div className="topics pt-1 pb-4">
-                      <span className="mr-1 badge badge-secondary badge-pill">
-                        {post.frontmatter.tags}
+                    <div className="topics pb-4">
+                    {post.frontmatter.tags.map((tag, i) => [
+                      <span
+                        className="mr-1 badge badge-secondary badge-pill"
+                        key={i}
+                      >
+                        <Link to={`/tags/${kebabCase(tag)}/`}>
+                          {tag}
+                        </Link>
                       </span>
-                    </div>
+                    ])}
+                  </div>
                     <Button className="btn-info">
                       <Link to={post.fields.slug} itemProp="url">
                         Learn more
@@ -93,6 +101,9 @@ export const pageQuery = graphql`
           description
           tags
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
       }
     }
   }
