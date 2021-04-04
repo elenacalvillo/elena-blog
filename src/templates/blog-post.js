@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const ResourceTemplate = ({ data, location }) => {
+const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
@@ -100,10 +100,10 @@ const ResourceTemplate = ({ data, location }) => {
   )
 }
 
-export default ResourceTemplate
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query ResourceBySlug(
+  query BlogPostBySlug(
     $id: String!
     $previousPostId: String
     $nextPostId: String
