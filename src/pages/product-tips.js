@@ -71,10 +71,6 @@ const ProductTipsIndex = ({ data, location }) => {
         />
       </div>
 
-      <div className="container bg-light p-5">
-        <p>Newsletter here</p>
-      </div>
-
       <div className="pt-1 pb-4">
         <h2 className="text-center pt-5">Jump start with free resources!</h2>
         <p className="text-center mb-5">
@@ -282,35 +278,35 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 300, height: 300, quality: 100) {
+        fixed(width: 300, height: 300, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     books: file(absolutePath: { regex: "/books.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 100) {
+        fixed(width: 550, height: 250, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     templates: file(absolutePath: { regex: "/templates.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 100) {
+        fixed(width: 550, height: 250, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     jargon: file(absolutePath: { regex: "/jargon.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 100) {
+        fixed(width: 550, height: 250, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     conferences: file(absolutePath: { regex: "/conferences.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 100) {
+        fixed(width: 550, height: 250, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
