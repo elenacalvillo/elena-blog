@@ -1,12 +1,11 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
-
+import kebabCase from "lodash/kebabCase"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 //import ConvertKit from '../components/convertkit';
-import Carousel from "react-multi-carousel"
+//import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 
 import { Button, Card } from "react-bootstrap"
@@ -15,38 +14,20 @@ import { Button, Card } from "react-bootstrap"
 
 const ProductTipsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const avatar = data?.avatar?.childImageSharp?.fixed
+  const cover = data?.cover?.childImageSharp?.fixed
+  const feature = data?.feature?.childImageSharp?.fixed
   const books = data?.books?.childImageSharp?.fixed
   const templates = data?.templates?.childImageSharp?.fixed
   const jargon = data?.jargon?.childImageSharp?.fixed
   const conferences = data?.conferences?.childImageSharp?.fixed
   const posts = data.allMarkdownRemark.nodes
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  }
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Elena Calvillo | Product Management Tips on Instagram" />
 
-      <div className="bio d-md-flex p-3">
-        <div>
+      <div className="bio row p-3">
+        <div className="col-md-7 order-sm-last pt-5 pb-5">
           <h1 className="fontSize-7">
             Welcome to {""}
             <a
@@ -61,23 +42,54 @@ const ProductTipsIndex = ({ data, location }) => {
             Product Tips was born with the idea of helping people to easy
             understand the Product Management world.
           </p>
-        </div>
-        <Image
-          fixed={avatar}
-          className="bio-avatar align-self-sm-center img-fluid flex-sm-shrink-2 ml-md-3"
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
+        </div>    
+        <div className="col">
+        <Image fixed={cover} />
+      </div>    
       </div>
+      
+      <div className="pt-1 pb-4">
+      <h2 className="text-center pt-5 mb-5">New freebie! 🤩</h2>
+      <div className="row">
+        <div className="col-md-8 mx-auto mb-5">
+          <Link to="" itemProp="url">
+            <Card temProp="url">
+              <div className="row">
+                <div className="col-md-5">
+                  <Image
+                    fixed={feature}
+                    className="img-fluid d-block position-static p-0"
+                  />
+                </div>
+                <div className="col-md-7">
+                  <div className="card-body">
+                    <h5 className="card-title" itemProp="headline">
+                      How to create better User Stories
+                    </h5>
+                    <p className="card-text" itemProp="description">
+                      This template will help you to transform who, what and why into user stories and acceptance criteria’s format!
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <Button className="btn-info">
+                      <Link to="https://www.notion.so/prdcttips/How-to-create-User-Stories-85c2c7483d314fb2b84520c93358be9b" target="_blank" rel="noreferrer" itemProp="url">
+                        Get free template
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </Link>
+        </div>
+        </div>
+        </div>
 
       <div className="pt-1 pb-4">
         <h2 className="text-center pt-5">Jump start with free resources!</h2>
         <p className="text-center mb-5">
           Want to speed up and put in practice your knowledge? Well you're in
-          the right place! <br /> I crafted and tested each one of these
-          templates so you can quickly start filling just the information that
-          you need.
+          the right place!
         </p>
         <div className="row row-cols-1 row-cols-lg-2 g-4">
           <div className="col mb-5">
@@ -102,7 +114,7 @@ const ProductTipsIndex = ({ data, location }) => {
                     </div>
                     <div className="card-footer">
                       <Button className="btn-info">
-                        <Link to="" itemProp="url">
+                        <Link to="/resources" itemProp="url">
                           Get free Books
                         </Link>
                       </Button>
@@ -134,7 +146,7 @@ const ProductTipsIndex = ({ data, location }) => {
                     </div>
                     <div className="card-footer">
                       <Button className="btn-info">
-                        <Link to="" itemProp="url">
+                        <Link to="/resources" itemProp="url">
                           Get free templates
                         </Link>
                       </Button>
@@ -166,7 +178,7 @@ const ProductTipsIndex = ({ data, location }) => {
                     </div>
                     <div className="card-footer">
                       <Button className="btn-info">
-                        <Link to="" itemProp="url">
+                        <Link to="/resources" itemProp="url">
                           Get free glossary
                         </Link>
                       </Button>
@@ -198,7 +210,7 @@ const ProductTipsIndex = ({ data, location }) => {
                     </div>
                     <div className="card-footer">
                       <Button className="btn-info">
-                        <Link to="" itemProp="url">
+                        <Link to="/resources" itemProp="url">
                           See conferences
                         </Link>
                       </Button>
@@ -212,62 +224,73 @@ const ProductTipsIndex = ({ data, location }) => {
         <div className="row text-center">
           <div className="col pt-3">
             <h4>
-              <Link to="" itemProp="url" className="pretty-link bolder">
+              <Link to="/resources" itemProp="url" className="pretty-link bolder">
                 Check all resources
               </Link>
             </h4>
           </div>
         </div>
       </div>
+      
+      <h2 className="text-center pt-5 mb-5">Latest from the blog</h2>
+      <div className="row row-cols-1 row-cols-lg-3 g-4">
+      {posts.slice(0, 3).map(post => {
+        const title = post.frontmatter.title || post.fields.slug
 
-      <div className="pt-1 pb-4">
-        <h2 className="text-center pt-5">Recent Stories</h2>
-        <p className="text-center mb-5">
-          Want to speed up and put in practice your knowledge? Well you're in
-          the right place! <br /> I crafted and tested each one of these
-          templates so you can quickly start filling just the information that
-          you need.
-        </p>
-        <Carousel responsive={responsive} className="row">
-          {posts.slice(0, 6).map(post => {
-            const title = post.frontmatter.title || post.fields.slug
-
-            return (
-              <div className="col mb-5">
-                <Link to={post.fields.slug} itemProp="url">
-                  <Card key={post.fields.slug} className="h-100" temProp="url">
-                    <div className="card-body">
-                      <small>{post.frontmatter.date}</small>
-                      <h5 className="card-title" itemProp="headline">
-                        {title}
-                      </h5>
-                      <p
-                        className="card-text"
-                        dangerouslySetInnerHTML={{
-                          __html: post.frontmatter.description || post.excerpt,
-                        }}
-                        itemProp="description"
-                      />
-                    </div>
-                    <div className="card-footer">
-                      <div className="topics pt-1 pb-4">
-                        <span className="mr-1 badge badge-secondary badge-pill">
-                          {post.frontmatter.tags}
-                        </span>
-                      </div>
-                      <Button className="btn-info">
-                        <Link to={post.fields.slug} itemProp="url">
-                          Learn more
+        return (
+          <div className="col mb-5">
+            <Link to={post.fields.slug} itemProp="url">
+              <Card key={post.fields.slug} className="h-100" temProp="url">
+                <div className="card-body">
+                  <small>{post.frontmatter.date}</small>
+                  <h5 className="card-title" itemProp="headline">
+                    {title}
+                  </h5>
+                  <p
+                    className="card-text"
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                </div>
+                <div className="card-footer">
+                  <div className="topics pb-4">
+                    {post.frontmatter.tags.map((tag, i) => [
+                      <span
+                        className="mr-1 badge badge-secondary badge-pill"
+                        key={i}
+                      >
+                        <Link to={`/tags/${kebabCase(tag)}/`}>
+                          {tag}
                         </Link>
-                      </Button>
-                    </div>
-                  </Card>
-                </Link>
-              </div>
-            )
-          })}
-        </Carousel>
-      </div>
+                      </span>
+                    ])}
+                  </div>
+
+                  <Button className="btn-info">
+                    <Link to={post.frontmatter.slug} itemProp="url">
+                      Learn more
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+            </Link>
+          </div>
+        )
+      })}
+      
+    </div>
+    <div className="row text-center">
+    <div className="col pt-3">
+      <h4>
+        <Link to="/blog" itemProp="url" className="pretty-link bolder">
+          Read all posts
+        </Link>
+      </h4>
+    </div>
+  </div>
+
     </Layout>
   )
 }
@@ -276,9 +299,16 @@ export default ProductTipsIndex
 
 export const pageQuery = graphql`
   query {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    cover: file(absolutePath: { regex: "/cover.png/" }) {
       childImageSharp {
-        fixed(width: 300, height: 300, quality: 90) {
+        fixed(width: 300, quality: 90) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature: file(absolutePath: { regex: "/feature.png/" }) {
+      childImageSharp {
+        fixed(width: 550, height: 250, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -328,6 +358,9 @@ export const pageQuery = graphql`
           description
           tags
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
       }
     }
   }
