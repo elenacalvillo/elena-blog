@@ -4,24 +4,20 @@ import Image from "gatsby-image"
 import kebabCase from "lodash/kebabCase"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-//import ConvertKit from '../components/convertkit';
-//import Carousel from "react-multi-carousel"
-import "react-multi-carousel/lib/styles.css"
-
 import { Button, Card } from "react-bootstrap"
-
-//import CV from "cv.js"
+import Newsletter from "../components/convertkit"
 
 const ProductTipsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const cover = data?.cover?.childImageSharp?.fixed
+  const newsletter = data?.newsletter?.childImageSharp?.fixed
   const feature = data?.feature?.childImageSharp?.fixed
   const books = data?.books?.childImageSharp?.fixed
   const templates = data?.templates?.childImageSharp?.fixed
   const jargon = data?.jargon?.childImageSharp?.fixed
   const conferences = data?.conferences?.childImageSharp?.fixed
   const posts = data.allMarkdownRemark.nodes
-
+  
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Elena Calvillo | Product Management Tips on Instagram" />
@@ -47,7 +43,7 @@ const ProductTipsIndex = ({ data, location }) => {
         <Image fixed={cover} />
       </div>    
       </div>
-      
+            
       <div className="pt-1 pb-4">
       <h2 className="text-center pt-5 mb-5">New freebie! 🤩</h2>
       <div className="row">
@@ -58,23 +54,19 @@ const ProductTipsIndex = ({ data, location }) => {
                 <div className="col-md-5">
                   <Image
                     fixed={feature}
-                    className="img-fluid d-block position-static p-0"
+                    className="position-static p-0"
                   />
                 </div>
                 <div className="col-md-7">
                   <div className="card-body">
-                    <h5 className="card-title" itemProp="headline">
-                      How to create better User Stories
-                    </h5>
+                    <h5 className="card-title" itemProp="headline"> How to create better User Stories                    </h5>
                     <p className="card-text" itemProp="description">
-                      This template will help you to transform who, what and why into user stories and acceptance criteria’s format!
-                    </p>
+                      This template will help you to transform who, what and why into user stories and acceptance criteria’s format!</p>
                   </div>
                   <div className="card-footer">
                     <Button className="btn-info">
                       <Link to="https://www.notion.so/prdcttips/How-to-create-User-Stories-85c2c7483d314fb2b84520c93358be9b" target="_blank" rel="noreferrer" itemProp="url">
-                        Get free template
-                      </Link>
+                        Get free template </Link>
                     </Button>
                   </div>
                 </div>
@@ -232,6 +224,37 @@ const ProductTipsIndex = ({ data, location }) => {
         </div>
       </div>
       
+      <div className="pt-1 pb-4">
+        <h2 className="text-center pt-5 mb-5">Don't want to miss valuable resources?</h2>
+        <div className="row">
+          <div className="col-md-8 mx-auto mb-5">
+              <Card>
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                    fixed={newsletter}
+                    className="position-static p-0"
+                  />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                    <h3 className="card-title" itemProp="headline"> Receive resources right in your inbox!</h3>
+                    <p className="card-text" itemProp="description">
+                    🚀 Speed up your learning curve with product management resources.</p>
+                    <div className="row">
+                      <Newsletter />
+                    </div>
+                    </div>
+                    <div className="card-footer text-center">
+                      <small>I respect your <a className="pretty-link bolder" href="/privacy">privacy</a>. You can unsubscribe at anytime.</small>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+          </div>
+          </div>
+          </div>
+      
       <h2 className="text-center pt-5 mb-5">Latest from the blog</h2>
       <div className="row row-cols-1 row-cols-lg-3 g-4">
       {posts.slice(0, 3).map(post => {
@@ -306,9 +329,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    newsletter: file(absolutePath: { regex: "/newsletter.png/" }) {
+      childImageSharp {
+        fixed(width: 659, height: 400, quality: 90) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     feature: file(absolutePath: { regex: "/feature.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
+        fixed(quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
