@@ -1,18 +1,19 @@
 import React from "react"
 import kebabCase from "lodash/kebabCase"
 import { Link, graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 import { Button, Card } from "react-bootstrap"
 
 import ProductSchool from "../../static/ps-badge.jpg"
+import Image from "gatsby-image"
+import Newsletter from "../components/convertkit"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const newsletter = data?.newsletter?.childImageSharp?.fixed
 
   if (posts.length === 0) {
     return (
@@ -106,6 +107,38 @@ const Index = ({ data, location }) => {
           )
         })}
       </div>
+      
+      <div className="pt-1 pb-4">
+        <h2 className="text-center pt-5 mb-5">Don't want to miss valuable resources?</h2>
+        <div className="row">
+          <div className="col-md-8 mx-auto mb-5">
+              <Card>
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                    fixed={newsletter}
+                    className="position-static p-0"
+                  />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                    <h3 className="card-title" itemProp="headline"> Receive resources right in your inbox!</h3>
+                    <p className="card-text" itemProp="description">
+                    🚀 Speed up your learning curve with product management resources.</p>
+                    <div className="row">
+                      <Newsletter />
+                    </div>
+                    </div>
+                    <div className="card-footer text-center">
+                      <small>I respect your <a className="pretty-link bolder" href="/privacy">privacy</a>. You can unsubscribe at anytime.</small>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+          </div>
+          </div>
+          </div>
+      
     </Layout>
   )
 }
@@ -114,6 +147,13 @@ export default Index
 
 export const pageQuery = graphql`
   query {
+    newsletter: file(absolutePath: { regex: "/newsletter.png/" }) {
+      childImageSharp {
+        fixed(width: 659, height: 400, quality: 90) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title

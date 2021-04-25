@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-
+import { Button, Card } from "react-bootstrap"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Image from "gatsby-image"
 import Resource from '../components/resource';
+import Newsletter from "../components/convertkit"
 
 const ResourcesPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
+  const newsletter = data?.newsletter?.childImageSharp?.fixed
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -31,6 +34,37 @@ const ResourcesPage = ({ data, location }) => {
           
         </div>
       </div>
+      
+      <div className="pt-1 pb-4">
+        <h2 className="text-center pt-5 mb-5">Don't want to miss valuable resources?</h2>
+        <div className="row">
+          <div className="col-md-8 mx-auto mb-5">
+              <Card>
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                    fixed={newsletter}
+                    className="position-static p-0"
+                  />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                    <h3 className="card-title" itemProp="headline"> Receive resources right in your inbox!</h3>
+                    <p className="card-text" itemProp="description">
+                    🚀 Speed up your learning curve with product management resources.</p>
+                    <div className="row">
+                      <Newsletter />
+                    </div>
+                    </div>
+                    <div className="card-footer text-center">
+                      <small>I respect your <a className="pretty-link bolder" href="/privacy">privacy</a>. You can unsubscribe at anytime.</small>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+          </div>
+          </div>
+          </div>
     </Layout>
   );
 };
@@ -39,6 +73,13 @@ export default ResourcesPage
 
 export const pageQuery = graphql`
   query {
+    newsletter: file(absolutePath: { regex: "/newsletter.png/" }) {
+      childImageSharp {
+        fixed(width: 659, height: 400, quality: 90) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title

@@ -3,7 +3,7 @@
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Elena Calvillo",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -12,6 +12,7 @@
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.0",
+    "convertkit-react": "^1.5.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.29.1",
     "gatsby-image": "^2.11.0",
