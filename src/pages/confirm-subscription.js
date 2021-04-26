@@ -5,17 +5,17 @@ import SEO from '../components/seo';
 
 import { Button } from 'react-bootstrap';
 
-const Thanks = ({ data, location }) => {
+const Confirmation = ({ data, location }) => {
 	const siteTitle = data.site.siteMetadata.title;
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<SEO title="Thanks for subscribing!" />
+			<SEO title="Please confirm your subscription" />
 			<div className="col-md-8 mx-auto text-center">
-				<div className="thanks w-50 mx-auto mb-5"></div>
-				<h1>Thank you for getting this far!</h1>
-				<h3>Your subscription was successful.</h3>
-				<p>Now you'll receive occasional emails about Product Management stuff. <br/> Feel free to drop your comments or questions to hello@elenacalvillo.com</p>
+				<div className="confirmation w-75 mx-auto mb-5"></div>
+				<h1>You are almost there!</h1>
+				<h4>Now check your email to confirm your subscription.</h4>
+				<p>Why double opt-in is necessary? I want to respect your privacy, so with this step I'm making sure you really want to subscribe to my newsletter.</p>
 				<Button className="btn btn-info position-relative m-3">
 					<Link to="/" itemProp="url">
 						Go back to home
@@ -26,7 +26,7 @@ const Thanks = ({ data, location }) => {
 	);
 };
 
-export default Thanks
+export default Confirmation
 
 export const pageQuery = graphql`
   query {
