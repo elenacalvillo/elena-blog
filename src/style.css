@@ -765,6 +765,10 @@ blockquote > ol {
   width: 100%;
 }
 
+.confirmation {
+  content: url(../content/assets/confirm.svg);
+}
+
 .thanks {
   content: url(../content/assets/thanks.svg);
 }
