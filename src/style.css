@@ -69,12 +69,12 @@
 
   --blue: #3b8fff;
   --indigo: #3d5afe;
-  --purple: #bb6bd9;
+  --purple: #ce94e3;
   --pink: #f29292;
   --red: #eb5757;
-  --orange: #f2994a;
+  --orange: #f5b47a;
   --yellow: #ffd600;
-  --green: #54e892;
+  --green: #81eeaf;
   --teal: #7bd5e1;
   --cyan: #80deea;
   --light-sand: #F9F3E6;
@@ -602,7 +602,6 @@ pre[class*="language-"] {
   display: inline-block;
   content: " ";
   border-bottom-right-radius: 7rem;
-  //background-color: var(--cyan);
   background-repeat: no-repeat;
   background-size: 4rem;
   background-position: 0.438rem 0.5rem;
@@ -622,6 +621,23 @@ pre[class*="language-"] {
 .resource-template::before {
   background-color: var(--pink);
 }
+
+.resource-podcast::before {
+  background-color: var(--green);
+}
+
+.resource-blog::before {
+  background-color: var(--purple);
+}
+
+.resource-tool::before {
+  background-color: var(--gray-300);
+}
+
+.resource-course::before {
+  background-color: var(--orange);
+}
+
 
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
