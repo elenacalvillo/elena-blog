@@ -444,7 +444,7 @@ export const pageQuery = graphql`
       }
     }
     allInstaNode(
-      filter: { username: { eq: "43454604149" } }
+      filter: { username: { eq: "prdct.tips" } }
       sort: { fields: timestamp, order: DESC }
       limit: 12
     ) {
