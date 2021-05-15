@@ -18,7 +18,7 @@ const Index = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="Elena Calvillo Product Owner / Product Manager" />
+        <SEO title="Elena Calvillo Product Manager" />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -88,10 +88,8 @@ const Index = ({ data, location }) => {
                           className="mr-1 badge badge-secondary badge-pill"
                           key={i}
                         >
-                          <Link to={`/tags/${kebabCase(tag)}/`}>
-                            {tag}
-                          </Link>
-                        </span>
+                          <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        </span>,
                       ])}
                     </div>
 
@@ -107,38 +105,57 @@ const Index = ({ data, location }) => {
           )
         })}
       </div>
-      
+
+      <div className="row text-center">
+        <div className="col pt-3">
+          <h4>
+            <Link to="/blog" itemProp="url" className="pretty-link bolder">
+              Read all posts
+            </Link>
+          </h4>
+        </div>
+      </div>
+
       <div className="pt-1 pb-4">
-        <h2 className="text-center pt-5 mb-5">Don't want to miss valuable resources?</h2>
+        <h2 className="text-center pt-5 mb-5">
+          Don't want to miss valuable resources?
+        </h2>
         <div className="row">
           <div className="col-md-8 mx-auto mb-5">
-              <Card>
-                <div className="row">
-                  <div className="col-md-5">
-                    <Image
-                    fixed={newsletter}
-                    className="position-static p-0"
-                  />
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body">
-                    <h3 className="card-title" itemProp="headline"> Receive resources right in your inbox!</h3>
+            <Card>
+              <div className="row">
+                <div className="col-md-5">
+                  <Image fixed={newsletter} className="position-static p-0" />
+                </div>
+                <div className="col-md-7">
+                  <div className="card-body">
+                    <h3 className="card-title" itemProp="headline">
+                      {" "}
+                      Receive resources right in your inbox!
+                    </h3>
                     <p className="card-text" itemProp="description">
-                    🚀 Speed up your learning curve with product management resources.</p>
+                      🚀 Speed up your learning curve with product management
+                      resources.
+                    </p>
                     <div className="row">
                       <Newsletter />
                     </div>
-                    </div>
-                    <div className="card-footer text-center">
-                      <small>I respect your <a className="pretty-link bolder" href="/privacy">privacy</a>. You can unsubscribe at anytime.</small>
-                    </div>
+                  </div>
+                  <div className="card-footer text-center">
+                    <small>
+                      I respect your{" "}
+                      <a className="pretty-link bolder" href="/privacy">
+                        privacy
+                      </a>
+                      . You can unsubscribe at anytime.
+                    </small>
                   </div>
                 </div>
-              </Card>
+              </div>
+            </Card>
           </div>
-          </div>
-          </div>
-      
+        </div>
+      </div>
     </Layout>
   )
 }
