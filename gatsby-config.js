@@ -3,9 +3,9 @@ module.exports = {
     title: `Elena Calvillo`,
     author: {
       name: `Elena Calvillo`,
-      summary: `I'm a Product Owner/Manager. I help agile teams to build products using my UX, Quality Assurance and Development background.`,
+      summary: `I'm a Product Manager and I help agile teams to build products using my UX, Quality Assurance and Development background.`,
     },
-    description: `I'm Elena Calvillo. I'm a Product Owner/Manager. I help agile teams to build products using my UX, Quality Assurance and Development background.`,
+    description: `I'm a Product Manager and I help agile teams to build products using my UX, Quality Assurance and Development background.`,
     siteUrl: `https://elenacalvillo.com/`,
     social: {
       twitter: `elenahx`,
