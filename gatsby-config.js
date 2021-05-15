@@ -162,8 +162,8 @@ module.exports = {
       resolve: `gatsby-source-instagram`,
       options: {
         username: "prdct.tips",
-        access_token: "680002272706420|QF0YEi9JbZxDm2akQ15Ad-ZqXOM",
-        instagram_id: "10161829068518018",
+        access_token: "EAAJqdV3pP3QBAD0hm9ZCO1jrla1SDLOPmQmgZB9vw58XcZBtYvZC66MKTFaVGqoCYB2By1qXgBv8DVBrPL2mxiKy3eFYVlTwh4fLd97DA4Ha6PCUpnzD7NHP0tto8jSZALrWriBvMj9CKPaOB9ZC3gsO7kIbHaruyU6fHLBEHxZBmCaALPRtvZCo",
+        instagram_id: "17841443564471825",
       },
     },
     `gatsby-plugin-react-helmet`,
