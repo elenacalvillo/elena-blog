@@ -10,7 +10,6 @@ import Newsletter from "../components/convertkit"
 const ProductTipsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const newsletter = data?.newsletter?.childImageSharp?.fixed
-  const feature = data?.feature?.childImageSharp?.fixed
   const books = data?.books?.childImageSharp?.fixed
   const templates = data?.templates?.childImageSharp?.fixed
   const jargon = data?.jargon?.childImageSharp?.fixed
@@ -23,9 +22,9 @@ const ProductTipsIndex = ({ data, location }) => {
 
       <div className="bio row p-3">
         <div className="col pt-5 pb-5">
-          <h1>Take your product career to the next level</h1>
+          <h1>Are your tools holding you back from leveling up your career?</h1>
           <h2 className="summary">
-            Let's make sure you're using the right tools to master your product
+            Let's make sure you're using the right toolbox to master your product
             management career.
           </h2>
         </div>
@@ -39,11 +38,10 @@ const ProductTipsIndex = ({ data, location }) => {
                 <div className="card-body">
                   <h3 className="card-title" itemProp="headline">
                     {" "}
-                    Ready to level up your career with these resources?
+                    Take your product career to the next level
                   </h3>
                   <p className="card-text" itemProp="description">
-                    🚀 I’ll share to you resources and tips to level up your
-                    skills and save time. Sign up to access my FREE newsletter!
+                    🚀 I’ll share resources and tips with you to level up your skills and save time. Sign up to access my FREE newsletter!
                   </p>
                   <div className="row pt-2">
                     <Newsletter />
@@ -61,6 +59,118 @@ const ProductTipsIndex = ({ data, location }) => {
               </div>
             </div>
           </Card>
+        </div>
+      </div>
+      
+      <div className="pt-1 pb-2">
+        <h2 className="text-center pt-5 mb-4">It's hard to start a product career</h2>
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <p>
+              I wish someone could have told me how to start in product management... That's why my newsletter will give you the tools you need to start crushing it! Here's a sneak peek of what you'll learn:
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="pt-1 pb-4">
+        <div className="row row-cols-1 row-cols-lg-2 g-4">
+          <div className="col mb-5">
+              <Card temProp="url">
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                      fixed={books}
+                      className="img-fluid d-block position-static p-0"
+                    />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                      <h5 className="card-title" itemProp="headline">
+                        Product Books
+                      </h5>
+                      <p className="card-text" itemProp="description">
+                        Don't know where to start with PM? These books will help
+                        you to speed up your learning curve.
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </Card>
+          </div>
+          <div className="col mb-5">
+              <Card temProp="url">
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                      fixed={templates}
+                      className="img-fluid d-block position-static p-0"
+                    />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                      <h5 className="card-title" itemProp="headline">
+                        Product Templates
+                      </h5>
+                      <p className="card-text" itemProp="description">
+                        Don't know how to use frameworks? I created easy-to-use
+                        templates just for you!
+                      </p>
+                    </div>
+                   
+                  </div>
+                </div>
+              </Card>
+          </div>
+          <div className="col mb-5">
+              <Card temProp="url">
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                      fixed={jargon}
+                      className="img-fluid d-block position-static p-0"
+                    />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                      <h5 className="card-title" itemProp="headline">
+                        Product Jargon
+                      </h5>
+                      <p className="card-text" itemProp="description">
+                        What the hell is MVP or WSJF? Learn all the terminology
+                        fast with this compilation of terms.
+                      </p>
+                    </div>
+                   
+                  </div>
+                </div>
+              </Card>
+          </div>
+          <div className="col mb-5">
+              <Card itemProp="url">
+                <div className="row">
+                  <div className="col-md-5">
+                    <Image
+                      fixed={conferences}
+                      className="img-fluid d-block position-static p-0"
+                    />
+                  </div>
+                  <div className="col-md-7">
+                    <div className="card-body">
+                      <h5 className="card-title" itemProp="headline">
+                        Product Conferences
+                      </h5>
+                      <p className="card-text" itemProp="description">
+                        Attend conferences to learn about other PMs experience
+                        and start growing your network.
+                      </p>
+                    </div>
+                   
+                  </div>
+                </div>
+              </Card>
+          </div>
         </div>
       </div>
 
@@ -125,7 +235,7 @@ const ProductTipsIndex = ({ data, location }) => {
                   <h4 className="card-title">Stay up to date</h4>
                   <p className="card-text" itemProp="description">
                     Be the first to know about trending tools including
-                    discounts and offerts.
+                    discounts and offers.
                   </p>
                 </div>
               </div>
@@ -135,7 +245,7 @@ const ProductTipsIndex = ({ data, location }) => {
       </div>
 
       <div className="pt-1 pb-2">
-        <h2 className="text-center pt-5 mb-5">It all began on Instagram!</h2>
+        <h2 className="text-center pt-5 mb-4">It all began on Instagram!</h2>
         <div className="row">
           <div className="col-md-8 mx-auto">
             <p>
@@ -180,197 +290,6 @@ const ProductTipsIndex = ({ data, location }) => {
         )}
       </div>
 
-      <div className="pt-1 pb-4">
-        <h2 className="text-center pt-5 mb-5">New freebie! 🤩</h2>
-        <div className="row">
-          <div className="col-md-8 mx-auto mb-5">
-            <Link to="" itemProp="url">
-              <Card temProp="url">
-                <div className="row">
-                  <div className="col-md-5">
-                    <Image fixed={feature} className="position-static p-0" />
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body">
-                      <h5 className="card-title" itemProp="headline">
-                        {" "}
-                        How to create better User Stories{" "}
-                      </h5>
-                      <p className="card-text" itemProp="description">
-                        This template will help you to transform who, what and
-                        why into user stories and acceptance criteria’s format!
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <Button className="btn-info">
-                        <Link
-                          to="https://www.notion.so/prdcttips/How-to-create-User-Stories-85c2c7483d314fb2b84520c93358be9b"
-                          target="_blank"
-                          rel="noreferrer"
-                          itemProp="url"
-                        >
-                          Get free template{" "}
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-1 pb-4">
-        <h2 className="text-center pt-5">Jump start with free resources!</h2>
-        <p className="text-center mb-5">
-          Want to speed up and put in practice your knowledge? Well you're in
-          the right place!
-        </p>
-        <div className="row row-cols-1 row-cols-lg-2 g-4">
-          <div className="col mb-5">
-            <Link to="" itemProp="url">
-              <Card temProp="url">
-                <div className="row">
-                  <div className="col-md-5">
-                    <Image
-                      fixed={books}
-                      className="img-fluid d-block position-static p-0"
-                    />
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body">
-                      <h5 className="card-title" itemProp="headline">
-                        Product Books
-                      </h5>
-                      <p className="card-text" itemProp="description">
-                        Don't know where to start with PM? These books will help
-                        you jump start your career.
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <Button className="btn-info">
-                        <Link to="/resources" itemProp="url">
-                          Get free Books
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-          <div className="col mb-5">
-            <Link to="" itemProp="url">
-              <Card temProp="url">
-                <div className="row">
-                  <div className="col-md-5">
-                    <Image
-                      fixed={templates}
-                      className="img-fluid d-block position-static p-0"
-                    />
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body">
-                      <h5 className="card-title" itemProp="headline">
-                        Product Templates
-                      </h5>
-                      <p className="card-text" itemProp="description">
-                        Don't know how to use frameworks? I created easy-to-use
-                        templates just for you!
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <Button className="btn-info">
-                        <Link to="/resources" itemProp="url">
-                          Get free templates
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-          <div className="col mb-5">
-            <Link to="" itemProp="url">
-              <Card temProp="url">
-                <div className="row">
-                  <div className="col-md-5">
-                    <Image
-                      fixed={jargon}
-                      className="img-fluid d-block position-static p-0"
-                    />
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body">
-                      <h5 className="card-title" itemProp="headline">
-                        Product Jargon
-                      </h5>
-                      <p className="card-text" itemProp="description">
-                        What the hell is MVP or WSJF? Learn all the terminology
-                        fast with this compilation of terms.
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <Button className="btn-info">
-                        <Link to="/resources" itemProp="url">
-                          Get free glossary
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-          <div className="col mb-5">
-            <Link to="" itemProp="url">
-              <Card itemProp="url">
-                <div className="row">
-                  <div className="col-md-5">
-                    <Image
-                      fixed={conferences}
-                      className="img-fluid d-block position-static p-0"
-                    />
-                  </div>
-                  <div className="col-md-7">
-                    <div className="card-body">
-                      <h5 className="card-title" itemProp="headline">
-                        Product Conferences
-                      </h5>
-                      <p className="card-text" itemProp="description">
-                        Attend conferences to learn about other PMs experience
-                        and start growing your network.
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <Button className="btn-info">
-                        <Link to="/resources" itemProp="url">
-                          See conferences
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          </div>
-        </div>
-        <div className="row text-center">
-          <div className="col pt-3">
-            <h4>
-              <Link
-                to="/resources"
-                itemProp="url"
-                className="pretty-link bolder"
-              >
-                Check all resources
-              </Link>
-            </h4>
-          </div>
-        </div>
-      </div>
     </Layout>
   )
 }
@@ -386,37 +305,30 @@ export const pageQuery = graphql`
         }
       }
     }
-    feature: file(absolutePath: { regex: "/feature.png/" }) {
-      childImageSharp {
-        fixed(quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     books: file(absolutePath: { regex: "/books.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
+        fixed(width: 550, height: 200, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     templates: file(absolutePath: { regex: "/templates.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
+        fixed(width: 550, height: 200, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     jargon: file(absolutePath: { regex: "/jargon.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
+        fixed(width: 550, height: 200, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     conferences: file(absolutePath: { regex: "/conferences.png/" }) {
       childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
+        fixed(width: 550, height: 200, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }

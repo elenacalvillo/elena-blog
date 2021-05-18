@@ -15,47 +15,15 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-segment-analytics",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        writeKey: "3B4o9vsmK7v9kXyZoGYSz2BE1GKFDO1j",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-2Q23H9D3GZ", // Google Analytics / GA
+        fonts: [
+          `source sans pro\:400,400i,600,700`,
+          `source serif pro\:400,400i,600,700`,
+          `open sans\:400,400i,600,700`,
+          `caveat\:400,600,700`,
         ],
-        pluginConfig: {
-          head: true,
-        },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-heap",
-      options: {
-        appId: "4130300054",
-        enableOnDevMode: true, // if 'false', heap will be fired on NODE_ENV=production only
-      },
-    },
-    {
-      resolve: `gatsby-plugin-hotjar`,
-      options: {
-        includeInDevelopment: true, // optional parameter to include script in development
-        id: 2169576,
-        sv: 6,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-        src: "/termly-cookie-banner.js",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-        src: "/smartlook.js",
+        display: "swap",
       },
     },
     {
@@ -70,18 +38,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `source sans pro\:400,400i,600,700`,
-          `source serif pro\:400,400i,600,700`,
-          `open sans\:400,400i,600,700`,
-          `caveat\:400,600,700`,
-        ],
-        display: "swap",
       },
     },
     `gatsby-transformer-sharp`,
@@ -147,6 +103,50 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/logo.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-segment-analytics",
+      options: {
+        writeKey: "3B4o9vsmK7v9kXyZoGYSz2BE1GKFDO1j",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-2Q23H9D3GZ", // Google Analytics / GA
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-heap",
+      options: {
+        appId: "4130300054",
+        enableOnDevMode: true, // if 'false', heap will be fired on NODE_ENV=production only
+      },
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        id: 2169576,
+        sv: 6,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "/termly-cookie-banner.js",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        src: "/smartlook.js",
       },
     },
     {

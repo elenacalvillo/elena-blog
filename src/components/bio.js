@@ -43,6 +43,9 @@ const Bio = () => {
             {` `}
           </p>
         )}
+        <br/>
+        <p className="summary">I've built a community in Instagram where I help others to understand the PM world easily, check it out!</p>
+        <a className="btn btn-info pt-2 mt-3" href="https://www.instagram.com/prdct.tips/?ref=elenacalvillo.com" target="_blank">Join free community</a>
       </div>
       {avatar && (
         <Image
