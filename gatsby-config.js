@@ -69,24 +69,6 @@ module.exports = {
               rel: "nofollow",
             },
           },
-          {
-            resolve: `@raae/gatsby-remark-oembed`,
-            options: {
-              // usePrefix defaults to false
-              // usePrefix: true is the same as ["oembed"]
-              usePrefix: false,
-              providers: {
-                // Important to exclude providers
-                // that adds js to the page.
-                // If you do not need them.
-                Instagram: {
-                  //url: "https://api.instagram.com/oembed",
-                  access_token: "360251bb00188c3aeadf407105c6ebcc",
-                },
-                exclude: ["Reddit"],
-              },
-            },
-          },
           `gatsby-remark-copy-images`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
