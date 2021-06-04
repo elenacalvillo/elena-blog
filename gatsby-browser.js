@@ -1,6 +1,7 @@
 // normalize CSS across browsers
 import "./src/normalize.css"
 
+//NEVER REMOVE THESE
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
 import "bootstrap-icons/bootstrap-icons.svg"
