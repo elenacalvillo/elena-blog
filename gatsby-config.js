@@ -8,7 +8,6 @@ module.exports = {
     description: `I'm a Product Manager and I help agile teams to build products using my UX, Quality Assurance and Development background.`,
     siteUrl: `https://elenacalvillo.com/`,
     social: {
-      twitter: `elenahx`,
       instagram: `prdct.tips`,
       linkedin: `elena-calvillo-863542169`,
     },
@@ -106,23 +105,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/logo.png`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-segment-analytics",
-      options: {
-        writeKey: "3B4o9vsmK7v9kXyZoGYSz2BE1GKFDO1j",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-2Q23H9D3GZ", // Google Analytics / GA
-        ],
-        pluginConfig: {
-          head: true,
-        },
       },
     },
     {
