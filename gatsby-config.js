@@ -146,9 +146,9 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: "prdct.tips",
-        access_token: "EAAJqdV3pP3QBAPCJAJ601An5H71t2mMhHT72yqTAmnue8Uaegke5fTjxHMWJu0cqTOPc4kmh131r61wGIboGf8KoZA73G3gA5R6jiREMVb3ddFP797776s2rPnsOXf71A44AxBNbHTVX67RIzsSLZAj7O3FNUJGl5IJhh49szRdNZBHzRvM",
-        instagram_id: "17841443564471825",
+        username: "prdct.tips", //Never changes
+        access_token: "EAAJqdV3pP3QBANhGc6RBMQQeWD8ZB2yWbwsmR1trKGstNOntZC3614G0S6ihleDPMJR2QaEzYqCetVX62lRHqiO99TG90v2o63EqHdIZAhqVAIMZAd7cFu5VSdZBZC7Gg4ZBO99DfvcZCKq2ZBWJmwbmojn1DF00FfZBtEq5wcfFRYQoaKqMzssT7s",
+        instagram_id: "17841443564471825", //Never changes
       },
     },
     `gatsby-plugin-react-helmet`,
