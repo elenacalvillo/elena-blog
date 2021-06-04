@@ -14,7 +14,6 @@ const ProductTipsIndex = ({ data, location }) => {
   const templates = data?.templates?.childImageSharp?.fixed
   const jargon = data?.jargon?.childImageSharp?.fixed
   const conferences = data?.conferences?.childImageSharp?.fixed
-  const Insta = data.allInstaNode.edges
 
   return (
     <Layout location={location} title={siteTitle}>
