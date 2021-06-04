@@ -1,88 +1,165 @@
+<!DOCTYPE html>
 <html>
-	   <head>
-		  <style></style>
-		  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		  <style>
-		  html, body, table, tbody {
-			  background-color:#f9f3e6 !important;
-			  width:100%;
-		  }
-		  	html, body, p {color: #193b68; font-size: 16px;}
-			  
-			  small {color: #193b68;}
-			  
-			  h2, h3, h4, h5, h6 {color: #193b68 !important; font-weight: 400 !important;}
-			  
-			  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-				  color: #2b67b5 !important;
-				  text-decoration: none !important;
-			  }
-				  
-			  a {
-				  color: #f29292;
-			  }
-			  
-			  a:hover{
-				  color:#193b68;border-bottom-color:#193b68;
-			  }
-			  
-			  hr {
-				  border: .5px solid rgba(0,0,0,0.05);
-				  margin: 40px 0;
-			  }
-			  
-			  .text-center {text-align: center}
-			  
-			  .pink {
-					color:#f29292 !important;
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			html,
+			body,
+			table,
+			tbody {
+				background-color: #f9f3e6;
+				width: 100% !important;
+			}
+			html,
+			body,
+			p {
+				color: #193b68;
+				font-size: 16px;
+			}
+
+			p {
+				margin: 0;
+			}
+
+			small {
+				color: #193b68;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: #193b68 !important;
+				font-weight: 400 !important;
+			}
+
+			h1 a,
+			h2 a,
+			h3 a,
+			h4 a,
+			h5 a,
+			h6 a {
+				color: #2b67b5 !important;
+			}
+
+			a {
+				color: #f29292;
+			}
+
+			a:hover {
+				color: #193b68;
+				border-bottom-color: #193b68;
+			}
+
+			hr {
+				border: 0.5px solid rgba(0, 0, 0, 0.05);
+				margin: 40px 0;
+			}
+
+			.text-center {
+				text-align: center;
+			}
+
+			.email-intro h1 {
+				font-size: 36px;
+				margin: 0 !important;
+				color: #f29292 !important;
+			}
+			.email-intro h2 {
+				font-size: 18px;
+			}
+
+			.featured {
+				background-color: #193b68;
+				color: #fff;
+				border-radius: 20px;
+				padding:20px;
+			}
+			
+			.blockquotes {
+				border-left: 5px solid #2b67b5 !important;
+				font-size: 20px !important;
+			}
+
+			@media screen and (min-width: 800px) {
+				.email-intro {
+					padding: 50px !important;
 				}
-				
-				.email-intro h1{font-size:36px;}
-			  
-			  @media screen and (min-width:800px){
-				  .email-intro{padding:50px !important;}
-				  .email-intro h1{font-size:72px !important;line-height:1.3 !important;}
-			  }
-			 
-		  </style>
-	   </head>
-	   
-	   <body>
-		  <table role="presentation" cellpadding="0" cellspacing="0" class="email" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100%">
-			 <tbody>
+				.email-intro h1 {
+					font-size: 64px !important;
+				}
+				.email-intro h2 {
+					font-size: 24px !important;
+				}
+			}
+
+			@media (prefers-color-scheme: dark) {
+				html,
+				body,
+				table,
+				tbody {
+					background-color: #193b68 !important;
+					-webkit-text-fill-color: #f9f3e6 !important;
+				}
+				a {
+					color: #f29292 !important;
+				}
+
+				a:hover {
+					color: #183a68 !important;
+					border-bottom-color: #193b68 !important;
+				}
+
+				.featured {
+					background-color: #193b68 !important;
+					color: #193b68;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+			<tbody>
 				<tr>
-				   <td style="vertical-align:top">
-					  <div class="email-container" style="margin:0 auto;padding:30px; max-width:800px">
-						 <div class="email-intro text-center">
-							<div class="email-header">
-							   <h1 class="pink"><strong>Fresh Product Resources</strong></h1>
-							   <h3>Speed up your learning curve into the Product Management world with the right tools.</h3>
+					<td style="vertical-align: top;">
+						<div style="margin: 0 auto; padding: 30px; max-width: 800px;">
+							<div class="email-intro text-center">
+									<h1><strong>The PM Toolbox</strong></h1>
+									<h2>By <a href="https://www.instagram.com/prdct.tips/">@prdct.tips</a></h2>
 							</div>
-						 </div>
-						 <hr />
-						 <div class="email-body" style="margin-bottom:30px;overflow:hidden;">
-							<div class="email-content">
-							   <div>
-								{{ message_content }}  
-							   </div>
+							<div style="margin-bottom: 30px; overflow: hidden;">
+								<div>
+									<div>
+										{{ message_content }}
+									</div>
+								</div>
 							</div>
-						 </div>
-						 <hr />
-						 <div class="email-footer text-center">
-							 <p>If you think this could be interesting for someone else <a href="https://product-tips.ck.page/1f4ee0d4e5">use this link</a>.</p>
-							 
-							 <small>You're receiving this newsletter because you've subscribed from <a href="https://www.elenacalvillo.com/product-tips">www.elenacalvillo.com/product-tips</a> or you follow me on Instagram as <a href="https://www.instagram.com/prdct.tips/">@prdct.tips</a>, either way I'm glad to have you here!</small>
-							 
-							 <br/><br/>
-							 
-							 <small>{{ unsubscribe_link }}</small> 
-							 |
-							 <small>{{ subscriber_preferences_link }}</small>
-						 </div>
-					  </div>
-				   </td>
+							<hr />
+							<div class="email-footer">
+								<p>Share this newsletter <a href="https://product-tips.ck.page/1f4ee0d4e5">with this link</a> ❤️</p>
+
+								<small>Suggest resources or send your feedback by replying to this email or use hello@elenacalvillo.com</small>
+
+								<br />
+
+								<small>
+									You're receiving this newsletter because you've subscribed from <a href="https://www.elenacalvillo.com/product-tips">www.elenacalvillo.com/product-tips</a> or you follow
+									<a href="https://www.instagram.com/prdct.tips/">@prdct.tips</a> on Instagram, either way I'm glad to have you here!
+								</small>
+
+								<br />
+
+								<small>{{ unsubscribe_link }}</small>
+								|
+								<small>{{ subscriber_preferences_link }}</small>
+							</div>
+						</div>
+					</td>
 				</tr>
-			 </tbody>
-		  </table>
-	   </body>
-	</html>
+			</tbody>
+		</table>
+	</body>
+</html>
+
