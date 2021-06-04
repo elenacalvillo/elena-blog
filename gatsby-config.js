@@ -111,7 +111,7 @@ module.exports = {
       resolve: "gatsby-plugin-heap",
       options: {
         appId: "4130300054",
-        enableOnDevMode: true, // if 'false', heap will be fired on NODE_ENV=production only
+        enableOnDevMode: false, // if 'false', heap will be fired on NODE_ENV=production only
       },
     },
     {
@@ -147,7 +147,7 @@ module.exports = {
       resolve: `gatsby-source-instagram`,
       options: {
         username: "prdct.tips",
-        access_token: "EAAJqdV3pP3QBAD0hm9ZCO1jrla1SDLOPmQmgZB9vw58XcZBtYvZC66MKTFaVGqoCYB2By1qXgBv8DVBrPL2mxiKy3eFYVlTwh4fLd97DA4Ha6PCUpnzD7NHP0tto8jSZALrWriBvMj9CKPaOB9ZC3gsO7kIbHaruyU6fHLBEHxZBmCaALPRtvZCo",
+        access_token: "EAAJqdV3pP3QBAPCJAJ601An5H71t2mMhHT72yqTAmnue8Uaegke5fTjxHMWJu0cqTOPc4kmh131r61wGIboGf8KoZA73G3gA5R6jiREMVb3ddFP797776s2rPnsOXf71A44AxBNbHTVX67RIzsSLZAj7O3FNUJGl5IJhh49szRdNZBHzRvM",
         instagram_id: "17841443564471825",
       },
     },
