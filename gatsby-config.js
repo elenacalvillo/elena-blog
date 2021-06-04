@@ -15,7 +15,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [
           `source sans pro\:400,400i,600,700`,
@@ -24,6 +24,9 @@ module.exports = {
           `caveat\:400,600,700`,
         ],
         display: "swap",
+        attributes: {
+          rel: "stylesheet preload prefetch",
+        },
       },
     },
     {
