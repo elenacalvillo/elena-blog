@@ -143,16 +143,9 @@ module.exports = {
         content: "5362c412a6c44db1a6148791c34f05bb",
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: "prdct.tips", //Never changes
-        access_token: "EAAJqdV3pP3QBANhGc6RBMQQeWD8ZB2yWbwsmR1trKGstNOntZC3614G0S6ihleDPMJR2QaEzYqCetVX62lRHqiO99TG90v2o63EqHdIZAhqVAIMZAd7cFu5VSdZBZC7Gg4ZBO99DfvcZCKq2ZBWJmwbmojn1DF00FfZBtEq5wcfFRYQoaKqMzssT7s",
-        instagram_id: "17841443564471825", //Never changes
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-advanced-sitemap`,
+    
   ],
 }

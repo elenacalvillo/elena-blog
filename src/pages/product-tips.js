@@ -258,37 +258,7 @@ const ProductTipsIndex = ({ data, location }) => {
         </div>
       </div>
 
-      <div className="row row-cols-2 row-cols-lg-6">
-        {Insta.map((ig, i) =>
-          ig.node.localFile ? (
-            <a
-              href={"https://www.instagram.com/p/" + ig.node.id}
-              target="_blank"
-            >
-              <Card key={i} className="m-3">
-                <Image
-                  fluid={ig.node.localFile.childImageSharp.fluid}
-                  className="img-fluid"
-                />
-                {/* This is commented
-            <div className="d-flex justify-content-around pt-1">
-              <div className="d-flex justify-content-center w-50">
-                <i className="bi-suit-heart"></i>
-                <span className="h5 ml-2">{ig.node.likes}</span>
-              </div>
-              <div className="d-flex justify-content-center w-50">
-                <i className="bi-chat-left"></i>
-                <span className="h5 ml-2">{ig.node.comments}</span>
-              </div>
-            </div>
-            */}
-              </Card>
-            </a>
-          ) : (
-            <div></div>
-          )
-        )}
-      </div>
+      
 
     </Layout>
   )
@@ -355,27 +325,6 @@ export const pageQuery = graphql`
         fieldValue
       }
     }
-    allInstaNode(
-      filter: { username: { eq: "prdct.tips" } }
-      sort: { fields: timestamp, order: DESC }
-      limit: 12
-    ) {
-      edges {
-        node {
-          id
-          preview
-          username
-          likes
-          comments
-          localFile {
-            childImageSharp {
-              fluid(quality: 70) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-    }
+    
   }
 `
