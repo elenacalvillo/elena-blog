@@ -337,6 +337,8 @@ const Index = ({ data, location }) => {
               <img
                 className="img-fluid"
                 src={ProductSchool}
+                width="155"
+                height="155"
                 alt="Product School Founding 200"
               />
             </div>

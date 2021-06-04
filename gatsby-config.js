@@ -114,6 +114,7 @@ module.exports = {
         enableOnDevMode: false, // if 'false', heap will be fired on NODE_ENV=production only
       },
     },
+    /*
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
@@ -122,6 +123,7 @@ module.exports = {
         sv: 6,
       },
     },
+    */
     {
       resolve: "gatsby-plugin-load-script",
       options: {
