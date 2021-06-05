@@ -21,16 +21,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          if(navigator.userAgent.includes("Instagram")){
-            window.open("https://www.elenacalvillo.com/product-tips", '_blank');
-            window.stop();
-          }
-      `
-        }}
-      />
       </body>
     </html>
   )
