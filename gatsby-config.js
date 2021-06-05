@@ -109,14 +109,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-load-script",
       options: {
-        async: true,
         src: "/termly-cookie-banner.js",
       },
     },
     {
       resolve: "gatsby-plugin-load-script",
       options: {
-        async: true,
         src: "/smartlook.js",
       },
     },
