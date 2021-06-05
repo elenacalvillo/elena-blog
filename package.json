@@ -52,6 +52,7 @@
     "react-helmet": "^6.1.0",
     "reactstrap": "^8.9.0",
     "sass": "^1.34.1",
+    "webpack": "^5.38.1",
     "yarn": "^1.22.10"
   },
   "devDependencies": {
