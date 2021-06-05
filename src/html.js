@@ -25,7 +25,8 @@ export default function HTML(props) {
         dangerouslySetInnerHTML={{
           __html: `
           if(navigator.userAgent.includes("Instagram")){
-             window.location.href = "https://www.elenacalvillo.com/product-tips";
+            window.open("https://www.elenacalvillo.com/product-tips", '_blank');
+            window.stop();
           }
       `
         }}
