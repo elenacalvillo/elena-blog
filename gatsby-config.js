@@ -14,6 +14,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        cssLoaderOptions: {
+          exportLocalsConvention: false,
+          namedExport: false,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [
