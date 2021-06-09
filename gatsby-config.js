@@ -19,6 +19,7 @@ module.exports = {
         cssLoaderOptions: {
           esModule: false,
           modules: {
+            exportLocalsConvention: "asIs",
             namedExport: false,
           },
         },

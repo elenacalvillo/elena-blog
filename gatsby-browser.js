@@ -8,7 +8,7 @@ import "bootstrap-icons/bootstrap-icons.svg"
 import "hover.css/css/hover-min.css"
 
 // custom CSS styles
-import "./src/style.css"
+import styles from "./src/style.css"
 
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"
