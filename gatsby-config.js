@@ -17,8 +17,10 @@ module.exports = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         cssLoaderOptions: {
-          exportLocalsConvention: false,
-          namedExport: false,
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
         },
       },
     },
