@@ -400,7 +400,7 @@ a[target="_blank"]:after {
   color: #fff;
 }
 
-//Review this part because is adding a weird border color if I dont use but also is making the ripple effect white instead of dark...
+/*Review this part because is adding a weird border color if I dont use but also is making the ripple effect white instead of dark...*/
 .btn:not(:disabled):not(.disabled):active,
 .show > .btn.dropdown-toggle {
   background-color: transparent;
