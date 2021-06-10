@@ -1,7 +1,7 @@
-require('dotenv').config({
+/*require('dotenv').config({
   path: `.env.${process.env.NODE_VERSION}`,
 })
-
+*/
 module.exports = {
   siteMetadata: {
     title: `Elena Calvillo`,
