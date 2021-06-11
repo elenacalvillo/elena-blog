@@ -19,7 +19,6 @@
     "gatsby-plugin-feed": "^2.13.1",
     "gatsby-plugin-gatsby-cloud": "^1.0.2",
     "gatsby-plugin-google-fonts-with-attributes": "^1.0.8",
-    "gatsby-plugin-heap": "^1.1.0",
     "gatsby-plugin-load-script": "^1.1.0",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-mdx": "^1.0.1",

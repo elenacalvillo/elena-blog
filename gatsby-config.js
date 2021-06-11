@@ -116,9 +116,12 @@ module.exports = {
         icon: `content/assets/logo.png`,
       },
     },
+    /*
     {
       resolve: "gatsby-plugin-heap",
       options: {
+        async: true,
+        defer: true,
         appId: "4130300054",
         enableOnDevMode: false, // if 'false', heap will be fired on NODE_ENV=production only
       },
@@ -136,12 +139,24 @@ module.exports = {
     {
       resolve: "gatsby-plugin-load-script",
       options: {
+        async: true,
+        defer: true,
+        src: "/heap.js",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        async: true,
+        defer: true,
         src: "/termly-cookie-banner.js",
       },
     },
     {
       resolve: "gatsby-plugin-load-script",
       options: {
+        async: true,
+        defer: true,
         src: "/smartlook.js",
       },
     },
