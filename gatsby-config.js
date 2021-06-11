@@ -97,7 +97,6 @@ module.exports = {
             },
           },
           `gatsby-remark-copy-images`,
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -135,6 +134,14 @@ module.exports = {
         sv: 6,
       },
     },
+    {
+      resolve: "gatsby-plugin-load-script",
+      options: {
+        async: true,
+        defer: true,
+        src: "/termly-cookie-banner.js",
+      },
+    },
     */
     {
       resolve: "gatsby-plugin-load-script",
@@ -142,14 +149,6 @@ module.exports = {
         async: true,
         defer: true,
         src: "/heap.js",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-        async: true,
-        defer: true,
-        src: "/termly-cookie-banner.js",
       },
     },
     {
