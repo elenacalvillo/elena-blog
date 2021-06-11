@@ -148,7 +148,7 @@ html {
 }
 
 body::before {
-  content: url(../content/assets/puff.svg);
+  content: url(/puff.svg);
   right: -10rem;
   top: -20rem;
   position: absolute;
@@ -169,7 +169,7 @@ body {
 }
 
 footer::before {
-  content: url(../content/assets/star.svg);
+  content: url(/star.svg);
   left: 0rem;
   bottom: -1rem;
   position: absolute;
@@ -304,7 +304,7 @@ a[target="_blank"]:after {
 }
 
 .pea::before {
-  content: url(../content/assets/pea.svg);
+  content: url(/pea.svg);
   right: -20rem;
   top: -20rem;
   position: absolute;
@@ -313,7 +313,7 @@ a[target="_blank"]:after {
 }
 
 .banana::before {
-  content: url(../content/assets/banana.svg);
+  content: url(/banana.svg);
   right: -20rem;
   top: -20rem;
   position: absolute;
@@ -400,7 +400,7 @@ a[target="_blank"]:after {
   color: #fff;
 }
 
-//Review this part because is adding a weird border color if I dont use but also is making the ripple effect white instead of dark...
+/*Review this part because is adding a weird border color if I dont use but also is making the ripple effect white instead of dark...*/
 .btn:not(:disabled):not(.disabled):active,
 .show > .btn.dropdown-toggle {
   background-color: transparent;

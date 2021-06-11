@@ -1,3 +1,7 @@
+/*require('dotenv').config({
+  path: `.env.${process.env.NODE_VERSION}`,
+})
+*/
 module.exports = {
   siteMetadata: {
     title: `Elena Calvillo`,
@@ -13,6 +17,29 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            exportLocalsConvention: "asIs",
+            namedExport: false,
+          },
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
