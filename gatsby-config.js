@@ -30,6 +30,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [
