@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Button, Card } from "react-bootstrap"
@@ -9,11 +9,11 @@ import Newsletter from "../components/convertkit"
 
 const ProductTipsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const newsletter = data?.newsletter?.childImageSharp?.fixed
-  const books = data?.books?.childImageSharp?.fixed
-  const templates = data?.templates?.childImageSharp?.fixed
-  const jargon = data?.jargon?.childImageSharp?.fixed
-  const conferences = data?.conferences?.childImageSharp?.fixed
+  const newsletter = data?.newsletter?.childImageSharp?.gatsbyImageData
+  const books = data?.books?.childImageSharp?.gatsbyImageData
+  const templates = data?.templates?.childImageSharp?.gatsbyImageData
+  const jargon = data?.jargon?.childImageSharp?.gatsbyImageData
+  const conferences = data?.conferences?.childImageSharp?.gatsbyImageData
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -31,7 +31,7 @@ const ProductTipsIndex = ({ data, location }) => {
           <Card>
             <div className="row">
               <div className="col-md-5">
-                <Image fixed={newsletter} className="position-static p-0" />
+                <GatsbyImage image={newsletter} className="img-fluid" alt="The PM Toolbox Newsletter"/>
               </div>
               <div className="col-md-7">
                 <div className="card-body">
@@ -40,7 +40,7 @@ const ProductTipsIndex = ({ data, location }) => {
                     Take your product career to the next level
                   </h3>
                   <p className="card-text" itemProp="description">
-                    🚀 I’ll share resources and tips with you to level up your skills and save time. Sign up to access my FREE newsletter!
+                    🚀 Get FREE resources and tips to level up your skills and save time. Join now!
                   </p>
                   <div className="row pt-2">
                     <Newsletter />
@@ -78,10 +78,7 @@ const ProductTipsIndex = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={books}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={books} className="img-fluid" alt="Product Books"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -102,10 +99,7 @@ const ProductTipsIndex = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={templates}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={templates} className="img-fluid" alt="Product Templates"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -126,10 +120,7 @@ const ProductTipsIndex = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={jargon}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={jargon} className="img-fluid" alt="Product Jargon"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -150,10 +141,7 @@ const ProductTipsIndex = ({ data, location }) => {
               <Card itemProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={conferences}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={conferences} className="img-fluid" alt="Product Conferences"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -260,70 +248,58 @@ const ProductTipsIndex = ({ data, location }) => {
       
 
     </Layout>
-  )
+  );
 }
 
 export default ProductTipsIndex
 
-export const pageQuery = graphql`
-  query {
-    newsletter: file(absolutePath: { regex: "/newsletter.png/" }) {
-      childImageSharp {
-        fixed(width: 659, height: 400, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
+export const pageQuery = graphql`{
+  newsletter: file(absolutePath: {regex: "/newsletter.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 659, height: 400, quality: 90, layout: FIXED)
     }
-    books: file(absolutePath: { regex: "/books.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 200, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    templates: file(absolutePath: { regex: "/templates.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 200, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    jargon: file(absolutePath: { regex: "/jargon.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 200, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    conferences: file(absolutePath: { regex: "/conferences.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 200, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tags
-        }
-      }
-      group(field: frontmatter___tags) {
-        fieldValue
-      }
-    }
-    
   }
+  books: file(absolutePath: {regex: "/books.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 200, quality: 90, layout: FIXED)
+    }
+  }
+  templates: file(absolutePath: {regex: "/templates.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 200, quality: 90, layout: FIXED)
+    }
+  }
+  jargon: file(absolutePath: {regex: "/jargon.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 200, quality: 90, layout: FIXED)
+    }
+  }
+  conferences: file(absolutePath: {regex: "/conferences.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 200, quality: 90, layout: FIXED)
+    }
+  }
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    nodes {
+      excerpt
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        tags
+      }
+    }
+    group(field: frontmatter___tags) {
+      fieldValue
+    }
+  }
+}
 `

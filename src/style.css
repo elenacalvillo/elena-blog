@@ -465,8 +465,12 @@ a[target="_blank"]:after {
   border: none;
   border-radius: 0.7rem;
   box-shadow: var(--shadow-card);
-  overflow: hidden;
+  //overflow: hidden;
   transition: all 0.15s ease;
+}
+
+.card.resource {
+  overflow: hidden;
 }
 
 a .card:hover {
@@ -479,6 +483,11 @@ a .card:hover {
 a .card:hover .card-title {
   color: var(--color-primary);
   font-weight: bold;
+}
+
+.card picture img {
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
 }
 
 .card-title {
@@ -823,5 +832,10 @@ blockquote > ol {
   blockquote {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
+  }
+  .card picture img {
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+    border-bottom-left-radius: 0;
   }
 }

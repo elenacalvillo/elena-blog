@@ -3,13 +3,13 @@ import { Link, graphql } from 'gatsby';
 import { Button, Card } from "react-bootstrap"
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import Resource from '../components/resource';
 import Newsletter from "../components/convertkit"
 
 const ResourcesPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const newsletter = data?.newsletter?.childImageSharp?.fixed
+  const newsletter = data?.newsletter?.childImageSharp?.gatsbyImageData
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -51,10 +51,7 @@ const ResourcesPage = ({ data, location }) => {
               <Card>
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                    fixed={newsletter}
-                    className="position-static p-0"
-                  />
+                    <GatsbyImage image={newsletter} className="position-static p-0" />
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -80,19 +77,16 @@ const ResourcesPage = ({ data, location }) => {
 
 export default ResourcesPage
 
-export const pageQuery = graphql`
-  query {
-    newsletter: file(absolutePath: { regex: "/newsletter.png/" }) {
-      childImageSharp {
-        fixed(width: 659, height: 400, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`{
+  newsletter: file(absolutePath: {regex: "/newsletter.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 659, height: 400, quality: 90, layout: FIXED)
     }
   }
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
 `;
