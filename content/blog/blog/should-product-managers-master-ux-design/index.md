@@ -7,9 +7,9 @@ title: Should Product Managers master UX design?
 
 If we say that a good and remarkable product brings a great user experience. Then the formula should look like this:
 
-```jsx
-Remarkable Product = Great User eXperience
-```
+
+**Remarkable Product = Great User eXperience**
+
 
 Now, if the Product Managers are responsible for the planning and execution of the product... Do you still doubting if they need to know basic UX skills?
 
