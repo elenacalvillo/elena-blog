@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Button, Card } from "react-bootstrap"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Image from "gatsby-image"
 import Newsletter from "../components/convertkit"
@@ -49,8 +50,13 @@ const Index = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={books}
+                    <StaticImage
+                      src="./images/books.png" 
+                      alt="Product Books"
+                      placeholder="blurred"
+                      layout="fixed"
+                      width={200}
+                      height={200}
                       className="img-fluid d-block position-static p-0"
                     />
                   </div>
