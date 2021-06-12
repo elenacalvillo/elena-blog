@@ -1,30 +1,27 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 300, height: 300, quality: 90) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-        }
+  const data = useStaticQuery(graphql`query BioQuery {
+  avatar: file(absolutePath: {regex: "/profile-pic.jpg/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 300, height: 300, quality: 90, layout: FIXED)
+    }
+  }
+  site {
+    siteMetadata {
+      author {
+        name
+        summary
       }
     }
-  `)
+  }
+}
+`)
 
   const author = data.site.siteMetadata?.author
-  const avatar = data?.avatar?.childImageSharp?.fixed
+  const avatar = data?.avatar?.childImageSharp?.gatsbyImageData
 
   return (
     <div className="bio d-md-flex p-3">
@@ -42,17 +39,16 @@ const Bio = () => {
         <a className="btn btn-info pt-2 mt-3" href="https://www.instagram.com/prdct.tips/?ref=elenacalvillo.com" target="_blank">Join free community</a>
       </div>
       {avatar && (
-        <Image
-          fixed={avatar}
+        <GatsbyImage
+          image={avatar}
           alt={author?.name || ``}
           className="bio-avatar d-none d-md-block align-self-sm-center"
           imgStyle={{
             borderRadius: `50%`,
-          }}
-        />
+          }} />
       )}
     </div>
-  )
+  );
 }
 
 export default Bio

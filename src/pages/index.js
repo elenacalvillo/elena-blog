@@ -5,19 +5,18 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Button, Card } from "react-bootstrap"
-
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import Newsletter from "../components/convertkit"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-  const newsletter = data?.newsletter?.childImageSharp?.fixed
-  const feature = data?.feature?.childImageSharp?.fixed
-  const books = data?.books?.childImageSharp?.fixed
-  const templates = data?.templates?.childImageSharp?.fixed
-  const jargon = data?.jargon?.childImageSharp?.fixed
-  const conferences = data?.conferences?.childImageSharp?.fixed
+  const newsletter = data?.newsletter?.childImageSharp?.gatsbyImageData
+  const feature = data?.feature?.childImageSharp?.gatsbyImageData
+  const books = data?.books?.childImageSharp?.gatsbyImageData
+  const templates = data?.templates?.childImageSharp?.gatsbyImageData
+  const jargon = data?.jargon?.childImageSharp?.gatsbyImageData
+  const conferences = data?.conferences?.childImageSharp?.gatsbyImageData
 
   if (posts.length === 0) {
     return (
@@ -49,9 +48,9 @@ const Index = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={books}
-                      className="img-fluid d-block position-static p-0"
+                    <GatsbyImage image={books}
+                      className="img-fluid"
+                      alt="Product Books"
                     />
                   </div>
                   <div className="col-md-7">
@@ -81,10 +80,7 @@ const Index = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={templates}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={templates} className="img-fluid" alt="Product Templates"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -113,10 +109,7 @@ const Index = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={jargon}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={jargon} className="img-fluid" alt="Product Jargon"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -145,10 +138,7 @@ const Index = ({ data, location }) => {
               <Card itemProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image
-                      fixed={conferences}
-                      className="img-fluid d-block position-static p-0"
-                    />
+                    <GatsbyImage image={conferences} className="img-fluid" alt="Product Conferences"/>
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -196,7 +186,7 @@ const Index = ({ data, location }) => {
               <Card temProp="url">
                 <div className="row">
                   <div className="col-md-5">
-                    <Image fixed={feature} className="position-static p-0" />
+                    <GatsbyImage image={feature} className="img-fluid" alt="New product feature template" />
                   </div>
                   <div className="col-md-7">
                     <div className="card-body">
@@ -238,7 +228,7 @@ const Index = ({ data, location }) => {
             <Card>
               <div className="row">
                 <div className="col-md-5">
-                  <Image fixed={newsletter} className="position-static p-0" />
+                  <GatsbyImage image={newsletter} className="img-fluid" alt="The PM Toolbox Newsletter"/>
                 </div>
                 <div className="col-md-7">
                   <div className="card-body">
@@ -337,9 +327,6 @@ const Index = ({ data, location }) => {
               <svg className="img-fluid" version="1.0" xmlns="http://www.w3.org/2000/svg"
                width="683.000000pt" height="684.000000pt" viewBox="0 0 683.000000 684.000000"
                preserveAspectRatio="xMidYMid meet">
-              <metadata>
-              Created by potrace 1.16, written by Peter Selinger 2001-2019
-              </metadata>
               <g transform="translate(0.000000,684.000000) scale(0.100000,-0.100000)"
               fill="#121E48" stroke="none">
               <path d="M3205 6813 c-221 -15 -520 -66 -732 -127 -407 -117 -837 -340 -1178
@@ -506,76 +493,63 @@ const Index = ({ data, location }) => {
         </div>
       
     </Layout>
-  )
+  );
 }
 
 export default Index
 
-export const pageQuery = graphql`
-  query {
-    newsletter: file(absolutePath: { regex: "/newsletter.png/" }) {
-      childImageSharp {
-        fixed(width: 659, height: 400, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    feature: file(absolutePath: { regex: "/feature.png/" }) {
-      childImageSharp {
-        fixed(quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    books: file(absolutePath: { regex: "/books.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    templates: file(absolutePath: { regex: "/templates.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    jargon: file(absolutePath: { regex: "/jargon.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    conferences: file(absolutePath: { regex: "/conferences.png/" }) {
-      childImageSharp {
-        fixed(width: 550, height: 250, quality: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          tags
-        }
-      }
-      group(field: frontmatter___tags) {
-        fieldValue
-      }
+export const pageQuery = graphql`{
+  newsletter: file(absolutePath: {regex: "/newsletter.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 659, height: 400, quality: 90, layout: FIXED)
     }
   }
+  feature: file(absolutePath: {regex: "/feature.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 300, quality: 90, layout: FIXED)
+    }
+  }
+  books: file(absolutePath: {regex: "/books.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 250, quality: 90, layout: FIXED)
+    }
+  }
+  templates: file(absolutePath: {regex: "/templates.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 250, quality: 90, layout: FIXED)
+    }
+  }
+  jargon: file(absolutePath: {regex: "/jargon.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 250, quality: 90, layout: FIXED)
+    }
+  }
+  conferences: file(absolutePath: {regex: "/conferences.png/"}) {
+    childImageSharp {
+      gatsbyImageData(width: 550, height: 250, quality: 90, layout: FIXED)
+    }
+  }
+  site {
+    siteMetadata {
+      title
+    }
+  }
+  allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    nodes {
+      excerpt
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        tags
+      }
+    }
+    group(field: frontmatter___tags) {
+      fieldValue
+    }
+  }
+}
 `
