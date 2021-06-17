@@ -42,17 +42,18 @@ Meet all 17 members who signed the original Agile Manifesto back in 2001:
 
 The manifesto states the following:
 
-> We are uncovering better ways of developing
-software by doing it and helping others do it.
-Through this work we have come to value:
+***
 
-> Individuals and interactions over processes and tools
-Working software over comprehensive documentation
-Customer collaboration over contract negotiation
-Responding to change over following a plan
+*We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:*
 
-> That is, while there is value in the items on
-the right, we value the items on the left more.
+**Individuals and interactions** over processes and tools <br/>
+**Working software** over comprehensive documentation <br/>
+**Customer collaboration** over contract negotiation <br/>
+**Responding to change** over following a plan <br/>
+
+*That is, while there is value in the items on the right, we value the items on the left more.*
+
+***
 
 Did you sense the last phrasing of the Manifesto strongly powerful? Me too. And so do their founders!
 
