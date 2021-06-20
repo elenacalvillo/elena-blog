@@ -15,28 +15,31 @@ const Bio = () => {
         name
         summary
       }
+      social {
+        instagram
+      }
     }
   }
 }
 `)
 
   const author = data.site.siteMetadata?.author
+  const social = data.site.siteMetadata?.social
   const avatar = data?.avatar?.childImageSharp?.gatsbyImageData
 
   return (
     <div className="bio d-md-flex p-3">
       <div>
-        <h1>Hi, I&#39;m Elena</h1>
+        <h1>Do you want to learn Product Management?</h1>
         {author?.name && (
           <p className="summary">
             {" "}
             {author?.summary || null}
             {` `}
           </p>
-        )}
-        <br/>
-        <p className="summary">I've built a community in Instagram where I help others to understand the PM world easily, check it out!</p>
-        <a className="btn btn-info pt-2 mt-3" href="https://www.instagram.com/prdct.tips/?ref=elenacalvillo.com" target="_blank">Join free community</a>
+          )}
+          <br/>
+        <a className="btn btn-info pt-2 mt-3" href={`https://www.instagram.com/${social?.instagram}/?ref=elenacalvillo.com`} target="_blank">Join me on Instagram</a>
       </div>
       {avatar && (
         <GatsbyImage

@@ -5,7 +5,6 @@ import PropTypes from "prop-types"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -21,11 +20,7 @@ const TagsPage = ({
 }) => {
   return (
   <Layout location="" title={title}>
-  <SEO
-    title="All tags"
-    description="All tags"
-  />
-    <Helmet title={title} />
+  <SEO title="Product Management Tags"/>
     <div className="row">
     <div className="col-lg-6 blog-post">
       <h3>All Tags</h3>

@@ -15,10 +15,7 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-    <SEO
-      title="All tags"
-      description="All tags"
-    />
+    <SEO title="Product Management Tags"/>
     <div className="row">
     <div className="col-lg-6 blog-post pb-3">
       <h3>Found {tagHeader}:</h3>

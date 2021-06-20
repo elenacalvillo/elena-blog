@@ -17,7 +17,7 @@ const ProductTipsIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Elena Calvillo | Product Management Tips on Instagram" />
+      <SEO title="Product Management Instagram Newsletter" />
 
       <div className="bio row p-3">
         <div className="col pt-5 pb-5">
