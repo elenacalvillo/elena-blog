@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Elena Calvillo`,
     description: `I'm Elena Calvillo, I build digital products using my UX, Quality Assurance and Development skills. Learn Product Management easily.`,
-    siteUrl: `https://www.elenacalvillo.com/`,
+    siteUrl: `https://elenacalvillo.com`,
     author: {
       name: `Elena Calvillo`,
       summary: `I'm Elena Calvillo, I build digital products using my UX, Quality Assurance and Development background. I'll help you to understand the Product Management world easily.`,
