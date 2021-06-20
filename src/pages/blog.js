@@ -15,12 +15,10 @@ const Blog = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="Elena Calvillo Product Owner / Product Manager blog posts" />
+        <SEO title="Product Management Blog" />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No posts yet!
         </p>
       </Layout>
     )
@@ -28,7 +26,7 @@ const Blog = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Elena Calvillo Product Owner / Product Manager blog posts" />
+      <SEO title="Product Management Blog" />
       <h2 className="text-center mb-5">Latest from the blog</h2>
       <div className="row row-cols-1 row-cols-lg-3 g-4">
         {posts.map(post => {

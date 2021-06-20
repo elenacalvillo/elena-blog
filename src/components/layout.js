@@ -1,8 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Nav, Navbar, Button, Container, Card } from "react-bootstrap"
-import { withPrefix } from "gatsby"
-import Helmet from "react-helmet"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`

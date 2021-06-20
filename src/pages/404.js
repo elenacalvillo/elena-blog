@@ -11,7 +11,7 @@ const NotFoundPage = ({ data, location }) => {
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<SEO title="404: Not Found" />
+			<SEO title="404! Sorry Page Not Found" />
 			<div className="not-found d-flex flex-column align-items-center text-center p-5">
 				<h1 className="not-found-header">404</h1>
 				<h3>Uh oh you found an error, but not everything is lost.</h3>

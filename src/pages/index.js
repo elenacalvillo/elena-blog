@@ -21,12 +21,10 @@ const Index = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="Elena Calvillo Product Manager" />
+        <SEO title="Learn Product Management" />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No posts yet!
         </p>
       </Layout>
     )
@@ -34,7 +32,7 @@ const Index = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Elena Calvillo Product Owner / Product Manager" />
+      <SEO title="Learn Product Management" />
       <Bio />
               
       <div className="pt-1 pb-4">
