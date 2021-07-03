@@ -11,6 +11,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        {/* Pinterest Validation */}
+        <meta name="p:domain_verify" content="11feae0d0f01eff6d8c8ee0ce179f940"/>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
