@@ -12,7 +12,7 @@
     "bootstrap-icons": "^1.9.1",
     "convertkit-react": "^1.5.5",
     "dotenv": "^10.0.0",
-    "gatsby": "^4.19.0",
+    "gatsby": "^4.19.2",
     "gatsby-plugin-feed": "^2.5.15",
     "gatsby-plugin-gatsby-cloud": "^1.0.2",
     "gatsby-plugin-google-fonts-with-attributes": "^1.0.8",
