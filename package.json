@@ -2,7 +2,7 @@
   "name": "elena-blog",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "Elena Calvillo",
   "bugs": {
   "url": "https://github.com/elenacalvillo/elena-blog/issues"
