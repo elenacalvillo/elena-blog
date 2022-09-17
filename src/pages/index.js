@@ -62,7 +62,7 @@ const Index = ({ data, location }) => {
                       </p>
                     </div>
                     <div className="card-footer">
-                      <Button className="btn-info">
+                      <Button className="btn">
                         <Link to="/resources" itemProp="url">
                           Get free Books
                         </Link>
@@ -91,7 +91,7 @@ const Index = ({ data, location }) => {
                       </p>
                     </div>
                     <div className="card-footer">
-                      <Button className="btn-info">
+                      <Button className="btn">
                         <Link to="/resources" itemProp="url">
                           Get free templates
                         </Link>
@@ -120,7 +120,7 @@ const Index = ({ data, location }) => {
                       </p>
                     </div>
                     <div className="card-footer">
-                      <Button className="btn-info">
+                      <Button className="btn">
                         <Link to="/resources" itemProp="url">
                           Get free glossary
                         </Link>
@@ -149,7 +149,7 @@ const Index = ({ data, location }) => {
                       </p>
                     </div>
                     <div className="card-footer">
-                      <Button className="btn-info">
+                      <Button className="btn">
                         <Link to="/resources" itemProp="url">
                           See conferences
                         </Link>
@@ -198,7 +198,7 @@ const Index = ({ data, location }) => {
                       </p>
                     </div>
                     <div className="card-footer">
-                      <Button className="btn-info">
+                      <Button className="btn">
                         <Link
                           to="https://www.notion.so/prdcttips/How-to-create-User-Stories-85c2c7483d314fb2b84520c93358be9b"
                           target="_blank"
@@ -292,7 +292,7 @@ const Index = ({ data, location }) => {
                       ])}
                     </div>
 
-                    <Button className="btn-info">
+                    <Button className="btn">
                       <Link to={post.frontmatter.slug} itemProp="url">
                         Learn more
                       </Link>

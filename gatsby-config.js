@@ -10,7 +10,7 @@ module.exports = {
     },
     social: {
       instagram: `prdct.tips`,
-      linkedin: `elena-calvillo-863542169`,
+      linkedin: `elena-calvillo-pm`,
     },
   },
   plugins: [
@@ -41,10 +41,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts-with-attributes`,
       options: {
         fonts: [
-          `source sans pro\:400,400i,600,700`,
-          `source serif pro\:400,400i,600,700`,
-          `open sans\:400,400i,600,700`,
-          `caveat\:400,600,700`,
+          `Lexend`,
+          `lexend\:100,300,400,400i,600,700`
         ],
         display: "swap",
         attributes: {

@@ -30,11 +30,12 @@
   --spacing-28: 7rem;
   --spacing-32: 8rem;
 
-  --font-body: source sans pro, sans;
-  --font-heading: open sans, sans;
-  --font-post: source serif pro, sans serif;
-  --font-quote: caveat, cursive;
+  --font-body: Lexend, sans-serif;
+  --font-heading: Lexend, sans-serif;
+  --font-post: Lexend, sans-serif;
+  --font-quote: Lexend, sans-serif;
 
+  --fontWeight-light: 300;
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -58,6 +59,8 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
+
+/* Product Tips colors */
 
   --gray-100: #f6f9fc;
   --gray-200: #f3f8ff;
@@ -100,13 +103,38 @@
   --shadow-green: #54e892;
   --shadow-teal: rgba(123, 213, 225, 0.5);
   --shadow-cyan: rgba(62, 205, 223, 0.5);
+  
+  /* Elena's new brand colors */
+  
+  --sage--green: #C1D9C9;
+  --artichoke: #A1C6AD;
+  --aquamarine: #9FD5D1;
+  --dark--aquamarine:#6ABEB8;
+  --tea: #C6DABF;
+  --opal: #ABD1C6;
+  --thistle: #D9C1D1;
+  --ash: #B2BFB6;
+  --seashell: #FAE9E1;
+  --silk: #F3D2C1;
+  --melon: #F5B19F;
+  --dark--melon: #F39E88;
+  --crayola: #F9DB95;
+  --latte: #FEF6E4;
+  --floral--white: #FFFBF3;
+  --white: #FDFCFA;
+  --munsell: #29889C;
+  --midnight: #19535F;
+  --black: #202323;
+
+  
+  /* Color usage */
 
   --color-primary: var(--blue);
-  --color-secondary: var(--cyan);
-  --color-text: var(--gray-700);
+  --color-secondary: var(--aquamarine);
+  --color-text: var(--black);
   --color-text-light: var(--gray-600);
-  --color-heading: var(--blue);
-  --color-heading-black: var(--gray-700);
+  --color-heading: var(--munsell);
+  --color-heading-black: var(--midnight);
   --color-accent: var(--teal);
 
   --code: #f29292;
@@ -147,19 +175,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: url(/puff.svg);
-  right: -10rem;
-  top: -20rem;
-  position: absolute;
-  transform: rotate(-130deg);
-  z-index: -1;
-}
-
 body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
-  background: var(--gray-100);
+  font-weight: var(--fontWeight-light);
+  background: var(--white);
   color: var(--color-text);
   height: auto;
   overflow: hidden;
@@ -168,11 +188,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-footer::before {
-  content: url(/star.svg);
-  left: 0rem;
-  bottom: -1rem;
+body::after {
+  content: url(/treebie.svg);
+  left: -10rem;
+  bottom: -7rem;
   position: absolute;
+  //transform: rotate(-10deg);
   z-index: -1;
 }
 
@@ -204,9 +225,9 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
+  color: var(--color-heading-black);
   font-family: var(--font-heading);
   font-weight: var(--fontWeight-semibold);
-  /* margin-top: var(--spacing-12); */
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
   letter-spacing: -0.025em;
@@ -297,29 +318,7 @@ a[target="_blank"]:after {
 
 /* Fun Shapes */
 
-.pea,
-.banana {
-  overflow: hidden;
-  position: relative;
-}
 
-.pea::before {
-  content: url(/pea.svg);
-  right: -20rem;
-  top: -20rem;
-  position: absolute;
-  transform: rotate(-130deg);
-  z-index: -1;
-}
-
-.banana::before {
-  content: url(/banana.svg);
-  right: -20rem;
-  top: -20rem;
-  position: absolute;
-  transform: rotate(-130deg);
-  z-index: -1;
-}
 
 .header-space {
   margin-top: var(--spacing-32);
@@ -327,20 +326,8 @@ a[target="_blank"]:after {
 
 /* Redesigning Bootstrap */
 
-.bg-light {
-  background: white !important;
-}
-
-.bg-dark {
-  background: var(--dark-blue) !important;
-}
-
-.navbar-brand {
-  color: var(--color-secondary) !important;
-  font-weight: bold;
-  font-family: var(--font-quote);
-  font-size: var(--fontSize-4);
-  letter-spacing: 0.13rem;
+.navbar {
+  background: var(--white);
 }
 
 .navbar ul li {
@@ -363,19 +350,9 @@ a[target="_blank"]:after {
 
 .btn,
 .newsletter button {
-  background: transparent;
-  background-position: center;
+  background: var(--aquamarine) !important;
   border: none;
-  padding: 0 1rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 2rem;
-  display: inline-block;
-  font-weight: 600;
-  min-width: 4rem;
-  height: 2.25rem;
-  text-align: center;
-  text-transform: uppercase;
+  color: var(--midnight) !important;
   transition: background 0.8s;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -385,8 +362,8 @@ a[target="_blank"]:after {
 
 .btn:hover,
 .newsletter button:hover {
-  background: rgba(0, 0, 0, 0.2)
-    radial-gradient(circle, transparent 1%, rgba(0, 0, 0, 0.2) 1%) center/15000%;
+  background: var(--dark--aquamarine);
+  transition: background 0s;
 }
 
 .btn:active,
@@ -395,69 +372,13 @@ a[target="_blank"]:after {
   transition: background 0s;
 }
 
-.btn a,
-.newsletter button {
-  color: #fff;
-}
-
-/*Review this part because is adding a weird border color if I dont use but also is making the ripple effect white instead of dark...*/
+/*Review this part because is adding a weird border color if I don't use but also is making the ripple effect white instead of dark...*/
 .btn:not(:disabled):not(.disabled):active,
 .show > .btn.dropdown-toggle {
   background-color: transparent;
   border: none;
 }
 
-.btn-primary {
-  background: linear-gradient(180deg, var(--blue) 0%, var(--dark-blue) 100%);
-  box-shadow: 0 11px 26px 0 var(--shadow-blue);
-}
-
-.btn-primary:hover {
-  background: var(--dark-blue)
-    radial-gradient(circle, transparent 1%, var(--dark-blue) 1%) center/15000%;
-}
-
-.btn-primary:active {
-  background-color: var(--blue);
-  background-size: 100%;
-  transition: background 0s;
-}
-
-.btn-info,
-.newsletter button {
-  background: linear-gradient(180deg, var(--teal) 0%, var(--dark-teal) 100%);
-  box-shadow: 0 11px 26px 0 var(--shadow-teal);
-}
-
-.btn-info:hover,
-.newsletter button:hover {
-  background: var(--dark-teal)
-    radial-gradient(circle, transparent 1%, var(--dark-teal) 1%) center/15000%;
-}
-
-.btn-info:active {
-  background-color: var(--teal);
-  background-size: 100%;
-  transition: background 0s;
-}
-
-.btn-secondary {
-  color: #fff;
-  background: linear-gradient(180deg, var(--teal) 0%, var(--dark-teal) 100%);
-  box-shadow: 0 11px 26px 0 var(--shadow-cyan);
-}
-
-.btn-secondary:hover {
-  background: var(--dark-teal)
-    radial-gradient(circle, transparent 1%, var(--dark-teal) 1%) center/15000%;
-}
-
-.btn-secondary:active {
-  background-color: var(--teal);
-  background-size: 100%;
-  border-color: transparent !important;
-  transition: background 0s;
-}
 
 /*  Cards  */
 
@@ -482,7 +403,6 @@ a .card:hover {
 
 a .card:hover .card-title {
   color: var(--color-primary);
-  font-weight: bold;
 }
 
 .card picture img {
@@ -504,7 +424,7 @@ a .card:hover .card-title {
 .badge-secondary {
   background: var(--gray-300);
   color: var(--gray-800);
-  font-weight: 600;
+  font-weight: var(--fontWeight-semibold);
   text-transform: uppercase;
 }
 
@@ -583,18 +503,34 @@ pre[class*="language-"] {
   font-size: var(--fontSize-2);
 }
 
-.bio {
-  margin-bottom: var(--spacing-16);
+.brand {
+  color: var(--melon) !important;
+  letter-spacing: 0.1rem;
+  margin: 0;
 }
 
-.bio p {
-  margin-bottom: var(--spacing-0);
+.bio::before {
+  content: url(/bean.svg);
+  right: 3rem;
+  top: 3rem;
+  position: absolute;
+  transform: rotate(-90deg);
+  z-index: -1;
 }
+
+.bio::after {
+  content: url(/dots.svg);
+  right: -5rem;
+  top: 0;
+  position: absolute;
+  transform: rotate(-180deg);
+  z-index: -1;
+}
+
 
 .bio .summary {
   font-weight: 300;
-  font-size: var(--fontSize-4);
-  line-height: var(--lineHeight-relaxed);
+  font-size: var(--fontSize-3);
 }
 
 .bio-avatar {

@@ -29,8 +29,15 @@ const Bio = () => {
 
   return (
     <div className="bio d-md-flex p-3">
-      <div>
-        <h1>Do you want to learn Product Management?</h1>
+      <div className="mr-md-5">
+      <div className="d-flex align-items-center pl-0 mb-5">
+        <img src="/logo.png" 
+        alt="Elena Calvillo Website Logo" 
+        width={100}
+        />
+        <h1 className="brand">{author.name}</h1>
+        </div>
+        <h2>Hi there, my name is Elena</h2>
         {author?.name && (
           <p className="summary">
             {" "}
@@ -39,13 +46,13 @@ const Bio = () => {
           </p>
           )}
           <br/>
-        <a className="btn btn-info pt-2 mt-3" href={`https://www.instagram.com/${social?.instagram}/?ref=elenacalvillo.com`} target="_blank">Join me on Instagram</a>
+        <a className="btn" href={`https://www.instagram.com/${social?.instagram}/?ref=elenacalvillo.com`} target="_blank">Join me on Instagram</a>
       </div>
       {avatar && (
         <GatsbyImage
           image={avatar}
           alt={author?.name || ``}
-          className="bio-avatar d-none d-md-block align-self-sm-center"
+          className="bio-avatar d-none d-md-block align-self-sm-center ml-md-5"
           imgStyle={{
             borderRadius: `50%`,
           }} />

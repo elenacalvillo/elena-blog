@@ -4,27 +4,17 @@ import { Link } from "gatsby"
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-
-  if (isRootPath) {
-    header = (
-      <Link className="navbar-brand pl-3" to="/">
-        {title}
-      </Link>
-    )
-  } else {
-    header = (
-      <Link className="navbar-brand pl-3" to="/">
-        {title}
-      </Link>
-    )
-  }
 
   return (    
     <div data-is-root-path={isRootPath}>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
-          {header}
+          <Link to="/">
+            <img src="/logo.png" 
+            alt="Elena Calvillo Website Logo" 
+            width={70}
+            />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -37,7 +27,7 @@ const Layout = ({ location, title, children }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to="/" itemProp="url">
                   Home
